@@ -1,0 +1,17 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:latest",
+        "tslint-react"
+    ],
+    "rules": {
+        "object-literal-sort-keys":false,
+        "interface-name": [true, "never-prefix"],
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "no-console": [true, "log", "error"],
+        "jsx-wrap-multiline": false
+    }
+}

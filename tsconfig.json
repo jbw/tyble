@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "sourceMap": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "strictNullChecks": true,
+        "baseUrl": "."
+        /*"paths": {
+            "@components/*": [ "src/components/*" ],
+            "@containers/*": [ "src/components/containers/*" ]
+        }*/
+    },
+    "include": [
+        "index.tsx",
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+
+
+}
