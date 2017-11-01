@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "dist",
-        "target": "es6",
+        "target": "es5",
         "module": "es2015",
         "declaration": true,
         "sourceMap": true,
@@ -12,7 +12,11 @@
         "jsx": "react",
         "moduleResolution": "node",
         "strict": true,
-        "baseUrl": "."
+        "baseUrl": ".",
+        "lib": [
+            "es6",
+            "dom"
+        ],
         /*"paths": {
             "@components/*": [ "src/components/*" ],
             "@containers/*": [ "src/components/containers/*" ]
@@ -22,6 +26,7 @@
         "src/**/*"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "tests"
     ]
 }
