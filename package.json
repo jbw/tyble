@@ -16,10 +16,7 @@
     "dist/"
   ],
   "pre-commit": "pass",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jbw/tyble.git"
-  },
+  "repository": "git+https://github.com/jbw/tyble.git",
   "author": "Jason B Watson",
   "license": "MIT",
   "devDependencies": {
