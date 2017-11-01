@@ -22,7 +22,7 @@ export class Cell extends React.Component<CellProps> {
     }
 }
 
-const CellStyled: StyledComponentClass<CellProps, Cell> = styled(Cell) `
+const CellStyled: StyledComponentClass<CellProps, Cell> = styled(Cell as any) `
   display: flex;
   flex-grow: 1;
   flex-basis: 0;
