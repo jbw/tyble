@@ -60,7 +60,7 @@ const HeaderSortAsc = styled.div`
   }
 `;
 
-export const HeadingStyled: StyledComponentClass<HeadingProps, Heading> = styled(Heading as any) `
+export const HeadingStyled: StyledComponentClass<any, any> = styled(Heading as any) `
   display: flex;
   width: 100%;
   text-transform: uppercase;
