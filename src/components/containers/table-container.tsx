@@ -1,5 +1,10 @@
 import * as React from 'react';
-import styled from 'styled-components';
+
+import Heading from '../core/heading';
+import Row from '../core/row';
+import TableWrapper from '../core/wrappers/table-wrapper';
+import HeadingWrapper from '../core/wrappers/heading-wrapper';
+import RowWrapper from '../core/wrappers/row-wrapper';
 
 import {
     CellRender,
@@ -8,12 +13,6 @@ import {
     Sortable,
     SortOrder,
 } from '../core/types';
-
-import Heading from '../core/heading';
-import Row from '../core/row';
-import HeadingWrapper from '../core/wrappers/heading-wrapper';
-import RowWrapper from '../core/wrappers/row-wrapper';
-import TableWrapper from '../core/wrappers/table-wrapper';
 
 export interface TableColumn<T> extends Sortable<T> {
     heading: TableHeading;
@@ -38,7 +37,7 @@ interface TableCell {
     content: JSX.Element;
 }
 
-export interface TableState<T> {
+export interface TableState {
     columnSortName: string | undefined;
     columnSortOrder: SortOrder;
 }
@@ -48,7 +47,7 @@ interface OrderedRowProps {
     cells: TableCell[];
 }
 
-export default class Table<T> extends React.Component<TableProps<T>, TableState<T>> {
+export default class Table<T> extends React.Component<TableProps<T>, TableState> {
 
     constructor(props: TableProps<T>) {
         super(props);

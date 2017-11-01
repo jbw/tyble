@@ -1,8 +1,6 @@
 import * as React from 'react';
 
 import { Style } from '../../core/types';
-import { CellProps } from '../cell';
-import Row from '../row';
 
 export interface RowWrapperProps extends Style {
     children?: any;

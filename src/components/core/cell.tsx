@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { StyledComponentClass } from 'styled-components';
 
 import { Style } from '../core/types';
 
@@ -22,17 +22,17 @@ export class Cell extends React.Component<CellProps> {
     }
 }
 
-const CellStyled = styled(Cell) `
-    display: flex;
-    flex-grow: 1;
-    flex-basis: 0;
-    white-space: nowrap;
-    min-width: 0px;
+const CellStyled: StyledComponentClass<any, any> = styled(Cell as any) `
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  white-space: nowrap;
+  min-width: 0;
 
-    span{
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+  span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 `;
 
 export default CellStyled;

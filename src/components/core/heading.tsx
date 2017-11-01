@@ -1,8 +1,8 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { StyledComponentClass } from 'styled-components';
 
-import { MouseClickFunc, MouseEvent, Sortable, SortOrder, Style } from '../core/types';
-import Cell, { CellProps } from './cell';
+import Cell from './cell';
+import { MouseEvent, SortOrder, Style } from '../core/types';
 
 export interface HeadingProps extends Style {
     content: string;
@@ -21,7 +21,7 @@ export class Heading extends React.Component<HeadingProps> {
     public render() {
         const { content, className } = this.props;
         return (
-            <div className={this.props.className} onClick={this.handleClick}>
+            <div className={className} onClick={this.handleClick}>
                 {this.getSortOrderElement()}
                 <Cell content={content} />
             </div>
@@ -45,26 +45,27 @@ export class Heading extends React.Component<HeadingProps> {
 }
 
 const HeaderSortDesc = styled.div`
-    padding-right: 10px;
-    &:after{
-        content: '\\2193';
-    }
+  padding-right: 10px;
+
+  &::after {
+    content: '\\2193';
+  }
 `;
 
 const HeaderSortAsc = styled.div`
-    padding-right: 10px;
-    &:after{
-        content: '\\2191';
-    }
+  padding-right: 10px;
+
+  &::after {
+    content: '\\2191';
+  }
 `;
 
-export const HeadingStyled = styled(Heading) `
-    display: flex;
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #4a4a4a;
-
+export const HeadingStyled: StyledComponentClass<any, any> = styled(Heading as any) `
+  display: flex;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #4a4a4a;
 `;
 
 export default HeadingStyled;
