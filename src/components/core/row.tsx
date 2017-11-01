@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { MouseClickFunc, MouseEvent, Style } from '../core/types';
 import Cell, { CellProps } from './cell';
+import { MouseEvent, Style } from '../core/types';
 
 export interface RowProps extends Style {
     cells: CellProps[];

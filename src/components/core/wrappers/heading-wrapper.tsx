@@ -2,12 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { Style } from '../../core/types';
-import Heading, { HeadingProps } from '../heading';
-
 export interface HeadingWrapperProps extends Style {
     children?: any;
 }
-
 export class HeadingWrapper extends React.Component<HeadingWrapperProps> {
 
     public render() {

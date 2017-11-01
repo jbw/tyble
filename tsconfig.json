@@ -5,9 +5,13 @@
         "module": "commonjs",
         "declaration": true,
         "sourceMap": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "removeComments": true,
         "jsx": "react",
         "moduleResolution": "node",
-        "strictNullChecks": true,
+        "strict": true,
         "baseUrl": "."
         /*"paths": {
             "@components/*": [ "src/components/*" ],
@@ -15,12 +19,9 @@
         }*/
     },
     "include": [
-        "index.tsx",
         "src/**/*"
     ],
     "exclude": [
         "node_modules"
     ]
-
-
 }

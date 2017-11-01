@@ -5,7 +5,7 @@ var config = {
 
   entry: {
     "tyble": [
-      "./index.tsx",
+      "./src/components/index.ts",
     ],
   },
 
@@ -25,10 +25,10 @@ var config = {
 
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
-   /* alias: {
-      containers: srcPath('components/containers'),
-      components: srcPath('components'),
-    },*/
+    /* alias: {
+       containers: srcPath('components/containers'),
+       components: srcPath('components'),
+     },*/
   },
 
   module: {

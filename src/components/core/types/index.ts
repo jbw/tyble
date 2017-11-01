@@ -1,4 +1,3 @@
-
 export type MouseEvent = React.MouseEvent<HTMLDivElement>;
 export type MouseClickFunc = (e: MouseEvent) => void;
 export type CellRender<T> = (props: T) => JSX.Element;
