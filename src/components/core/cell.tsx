@@ -23,16 +23,16 @@ export class Cell extends React.Component<CellProps> {
 }
 
 const CellStyled: StyledComponentClass<CellProps, Cell> = styled(Cell) `
-    display: flex;
-    flex-grow: 1;
-    flex-basis: 0;
-    white-space: nowrap;
-    min-width: 0px;
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  white-space: nowrap;
+  min-width: 0;
 
-    span{
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+  span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 `;
 
 export default CellStyled;

@@ -48,11 +48,11 @@ const RowStyled: StyledComponentClass<RowProps, Row> = styled(Row) `
   font-weight: lighter;
   text-align: left;
   padding: 15px;
+  transition: all 0.5s ease;
 
-  transition: all .5s ease;
-    &:hover {
-        background: #f5f8fc;
-    }
+  &:hover {
+    background: #f5f8fc;
+  }
 `;
 
 export default RowStyled;

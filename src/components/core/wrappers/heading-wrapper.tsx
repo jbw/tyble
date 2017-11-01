@@ -17,13 +17,13 @@ export class HeadingWrapper extends React.Component<HeadingWrapperProps> {
 }
 
 const HeadingWrapperStyled: StyledComponentClass<HeadingWrapperProps, HeadingWrapper> = styled(HeadingWrapper) `
-    font-family: 'News Cycle Bold', sans-serif;
-    display: flex;
-    width: 100%;
-    cursor: pointer;
-    padding: 15px;
-    background: #f7f7f7;
-    border-top: 1px solid #e6e6e6;
+  font-family: 'News Cycle Bold', sans-serif;
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  padding: 15px;
+  background: #f7f7f7;
+  border-top: 1px solid #e6e6e6;
 `;
 
 export default HeadingWrapperStyled;

@@ -46,25 +46,26 @@ export class Heading extends React.Component<HeadingProps> {
 
 const HeaderSortDesc = styled.div`
   padding-right: 10px;
-    &:after{
-        content: '\\2193';
-    }
+
+  &::after {
+    content: '\\2193';
+  }
 `;
 
 const HeaderSortAsc = styled.div`
-    padding-right: 10px;
-    &:after{
-        content: '\\2191';
-    }
+  padding-right: 10px;
+
+  &::after {
+    content: '\\2191';
+  }
 `;
 
 export const HeadingStyled: StyledComponentClass<HeadingProps, Heading> = styled(Heading) `
-    display: flex;
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #4a4a4a;
-
+  display: flex;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #4a4a4a;
 `;
 
 export default HeadingStyled;
