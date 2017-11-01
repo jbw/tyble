@@ -39,7 +39,7 @@ var config = {
         exclude: /node_modules/
       }
     ]
-  },
+  }
 }
 
 

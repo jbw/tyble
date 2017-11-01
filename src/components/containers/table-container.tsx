@@ -14,7 +14,6 @@ import {
     SortOrder,
 } from '../core/types';
 
-
 export interface TableColumn<T> extends Sortable<T> {
     heading: TableHeading;
     expander?: JSX.Element;

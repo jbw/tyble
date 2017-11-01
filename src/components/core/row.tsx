@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { StyledComponentClass } from 'styled-components';
 
 import Cell, { CellProps } from './cell';
 import { MouseEvent, Style } from '../core/types';
@@ -39,18 +39,17 @@ export class Row extends React.Component<RowProps> {
             this.props.onClick(e);
         }
     }
-
 }
 
-const RowStyled = styled(Row) `
-    width: 100%;
-    display: flex;
-    border-top: 1px solid #e6e6e6;
-    font-weight: lighter;
-    text-align: left;
-    padding: 15px;
+const RowStyled: StyledComponentClass<RowProps, Row> = styled(Row) `
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #e6e6e6;
+  font-weight: lighter;
+  text-align: left;
+  padding: 15px;
 
-    transition: all .5s ease;
+  transition: all .5s ease;
     &:hover {
         background: #f5f8fc;
     }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { StyledComponentClass } from 'styled-components';
 
 import { Style } from '../../core/types';
 export interface HeadingWrapperProps extends Style {
@@ -16,7 +16,7 @@ export class HeadingWrapper extends React.Component<HeadingWrapperProps> {
     }
 }
 
-const HeadingWrapperStyled = styled(HeadingWrapper) `
+const HeadingWrapperStyled: StyledComponentClass<HeadingWrapperProps, HeadingWrapper> = styled(HeadingWrapper) `
     font-family: 'News Cycle Bold', sans-serif;
     display: flex;
     width: 100%;

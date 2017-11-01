@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { StyledComponentClass } from 'styled-components';
 
 import Cell from './cell';
 import { MouseEvent, SortOrder, Style } from '../core/types';
@@ -58,7 +58,7 @@ const HeaderSortAsc = styled.div`
     }
 `;
 
-export const HeadingStyled = styled(Heading) `
+export const HeadingStyled: StyledComponentClass<HeadingProps, Heading> = styled(Heading) `
     display: flex;
     width: 100%;
     text-transform: uppercase;
