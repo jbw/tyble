@@ -5,14 +5,14 @@ node_js:
   - 8
 script:
   - node --version
-  - npm install
-  - npm run lint:ts
-  - npm run lint:css
-  - npm run build
+  - yarn
+  - yarn run lint:ts
+  - yarn run lint:css
+  - yarn run build
 notifications:
     email:
       on_failure: change
 cache:
-  npm: true
+  yarn: true
   directories:
     - node_modules
