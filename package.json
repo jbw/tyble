@@ -6,7 +6,7 @@
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "./node_modules/.bin/webpack",
-        "build-prod": "./node_modules/.bin/webpack -p",
+        "build:prod": "./node_modules/.bin/webpack -p",
         "start": "./node_modules/.bin/webpack-dev-server --progress --inline --hot",
         "lint:css": "./node_modules/.bin/stylelint ./src/**/*.tsx",
         "lint:ts": "./node_modules/.bin/tslint -p tsconfig.json -c tslint.json -t stylish",
