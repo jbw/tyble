@@ -30,7 +30,6 @@ var config = {
        components: srcPath('components'),
      },*/
   },
-
   module: {
     loaders: [
       {

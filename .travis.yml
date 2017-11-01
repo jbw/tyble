@@ -9,6 +9,7 @@ script:
   - yarn run lint:ts
   - yarn run lint:css
   - yarn run build
+  - yarn run test
 notifications:
     email:
       on_failure: change

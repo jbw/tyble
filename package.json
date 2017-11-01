@@ -1,43 +1,61 @@
 {
-  "name": "tyble",
-  "version": "0.1.4",
-  "description": "A typesafe React table component",
-  "main": "dist/tyble.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "./node_modules/.bin/webpack",
-    "build-prod": "./node_modules/.bin/webpack -p",
-    "start": "./node_modules/.bin/webpack-dev-server --progress --inline --hot",
-    "lint:css": "./node_modules/.bin/stylelint ./src/**/*.tsx",
-    "lint:ts": "./node_modules/.bin/tslint -p tsconfig.json -c tslint.json -t stylish",
-    "prepublishOnly": "./node_modules/.bin/webpack -p"
-  },
-  "files": [
-    "dist/"
-  ],
-  "pre-commit": "pass",
-  "repository": "git+https://github.com/jbw/tyble.git",
-  "author": "Jason B Watson",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^8.0.34",
-    "@types/react": "^16.0.18",
-    "@types/react-dom": "^16.0.1",
-    "awesome-typescript-loader": "^3.2.3",
-    "stylelint": "^8.2.0",
-    "stylelint-config-standard": "^17.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.0.0",
-    "tslint": "^5.8.0",
-    "tslint-microsoft-contrib": "^5.0.1",
-    "tslint-react": "^3.2.0",
-    "typescript": "^2.5.3",
-    "webpack": "^3.7.1",
-    "webpack-dev-server": "^2.9.2"
-  },
-  "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "styled-components": "^2.2.1"
-  }
+    "name": "tyble",
+    "version": "0.1.4",
+    "description": "A typesafe React table component",
+    "main": "dist/tyble.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "./node_modules/.bin/webpack",
+        "build-prod": "./node_modules/.bin/webpack -p",
+        "start": "./node_modules/.bin/webpack-dev-server --progress --inline --hot",
+        "lint:css": "./node_modules/.bin/stylelint ./src/**/*.tsx",
+        "lint:ts": "./node_modules/.bin/tslint -p tsconfig.json -c tslint.json -t stylish",
+        "prepublishOnly": "./node_modules/.bin/webpack -p",
+        "test": "./node_modules/.bin/jest"
+    },
+    "files": [
+        "dist/"
+    ],
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+        },
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json"
+        ]
+    },
+    "pre-commit": "pass",
+    "repository": "git+https://github.com/jbw/tyble.git",
+    "author": "Jason B Watson",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^21.1.5",
+        "@types/node": "^8.0.34",
+        "@types/react": "^16.0.18",
+        "@types/react-dom": "^16.0.1",
+        "awesome-typescript-loader": "^3.2.3",
+        "jest": "^21.2.1",
+        "react-test-renderer": "^16.0.0",
+        "stylelint": "^8.2.0",
+        "stylelint-config-standard": "^17.0.0",
+        "stylelint-config-styled-components": "^0.1.1",
+        "stylelint-processor-styled-components": "^1.0.0",
+        "ts-jest": "^21.1.4",
+        "tslint": "^5.8.0",
+        "tslint-microsoft-contrib": "^5.0.1",
+        "tslint-react": "^3.2.0",
+        "typescript": "^2.5.3",
+        "webpack": "^3.7.1",
+        "webpack-dev-server": "^2.9.2"
+    },
+    "dependencies": {
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "styled-components": "^2.2.1"
+    }
 }
