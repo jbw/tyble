@@ -1,33 +1,38 @@
-# Tyble
-
-[![Master Status](https://travis-ci.org/jbw/tyble.svg?branch=master)](https://travis-ci.org/jbw/tyble)
-[![Develop Status](https://travis-ci.org/jbw/tyble.svg?branch=develop)](https://travis-ci.org/jbw/tyble)
+<h1 align="center">
+<br>
+Tyble
+<br>
 
 `tyble` is a typesafe React table written in TypeScript.
 
+[![Master Status](https://travis-ci.org/jbw/tyble.svg?branch=master)](https://travis-ci.org/jbw/tyble)
+[![Develop Status](https://travis-ci.org/jbw/tyble.svg?branch=develop)](https://travis-ci.org/jbw/tyble)
+</h1>
 
-## Features
-* Typed property selectors
-* Column sorting
-* Consume any data structure
+# Features
 
-## Installation
+* Typed property selectors for cell data.
+* Column sorting and custom sorting functionality provided.
 
-### Yarn
-```
+# Installation
+
+## Yarn
+
+```bash
 yarn add tyble
 ```
 
-### NPM
+## NPM
 
-```
+```bash
 npm i tyble
 ```
 
-## Example
+# Example
 
+## Types
 
-### Types
+You can define our interfaces and types to be used by `tyble`. 
 
 ```typescript
 import * as React from 'react';
@@ -53,7 +58,10 @@ interface Company {
 
 ```
 
-### Data
+## Data
+
+Example data to be passed into `tyble`. This could be from an external web api etc. 
+
 ```typescript
 const data: Person[] = [
     {
@@ -71,8 +79,9 @@ const data: Person[] = [
 ];
 ```
 
-```typescript
+If you want sorting you can write a custom sorting method to enable it on a column.
 
+```typescript
 const sortFunc = (props: Person[], sortOrder: SortOrder) => {
     props.sort((a: Person, b: Person) => {
 
@@ -85,8 +94,10 @@ const sortFunc = (props: Person[], sortOrder: SortOrder) => {
 };
 ```
 
+## Columns
 
-### Columns
+Define your columns and use them to populate your cells. No
+accessor id needed because we have type safety!
 
 ```jsx
 const columns: Array<TableColumn<Person>> = [
@@ -112,34 +123,27 @@ const columns: Array<TableColumn<Person>> = [
 
 ```
 
-## Running the tests
+# Running the tests
 
-```
+```bash
  yarn run test
 ```
 
-```
+```bash
  yarn run lint:ts
  yarn run lint:css
 ```
 
-## Contributing
+# Contributing
+
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
-## License
+# License
+
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
+# FAQ
 
-## Versions
+**Is this production ready?**
 
-* 0.1.5 (Not production ready)
-
-## FAQ
-
-
-### Is this production ready?
-
-No
-
-
-## API
+Until version 1.0.0 this component will not be production ready. It is being developed and changed with pace.
