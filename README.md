@@ -146,4 +146,4 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 **Is this production ready?**
 
-Until version 1.0.0 this component will not be production ready. It is being developed and changed with pace.
+Until version `1.0.0` this component will not be production ready. It is being developed and changed at pace.
