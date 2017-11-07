@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { SortOrder, Table, TableColumn } from '../src/components';
+import { SortOrder, Tyble, TableColumn } from '../src/tyble';
 
 interface Person {
     name: string;
@@ -72,6 +72,6 @@ body {
 `; */
 
 ReactDOM.render(
-    <Table columns={columns} data={data} />,
+    <Tyble columns={columns} data={data} />,
     document.getElementById('root'),
 );

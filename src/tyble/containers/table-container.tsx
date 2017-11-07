@@ -47,7 +47,7 @@ interface OrderedRowProps {
     cells: TableCell[];
 }
 
-export default class Table<T> extends React.Component<TableProps<T>, TableState> {
+export default class Tyble<T> extends React.Component<TableProps<T>, TableState> {
 
     constructor(props: TableProps<T>) {
         super(props);
