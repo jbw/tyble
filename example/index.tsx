@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-// tslint:disable-next-line:no-implicit-dependencies
 import { SortOrder, Table, TableColumn } from '../src/components';
 
 interface Person {
@@ -19,60 +18,29 @@ interface Company {
     name: string;
 }
 
-interface Sort {
-    name: string;
-    func: (props: any) => any;
-}
+const sortFunc = (props: Person[], sortOrder: SortOrder) => {
+   return props.sort((a: Person, b: Person) => {
 
-const sorting: Sort[] = [
-    {
-        name: 'basic',
-        func: (props: Person[]) => props.sort((a: Person, b: Person) => a.name > b.name ? 1 : -1),
-    },
-];
+        if (sortOrder === SortOrder.DESC) {
+            return a.name > b.name ? 1 : -1;
+        }
+        return a.name < b.name ? 1 : -1;
 
-const personList: Person[] = [
+    });
+};
+
+const data: Person[] = [
     {
         name: 'Jason',
         lastname: 'Watson',
-        skills: [{
-            name: 'TypeScript',
-            level: 100,
-        }],
-        company: {
-            name: 'Caspian',
-        },
+        skills: [{  name: 'TypeScript',  level: 100 }],
+        company: {  name: 'Caspian' },
     },
     {
-        name: 'Bob',
-        lastname: 'Smiths',
-        skills: [{
-            name: 'TypeScript',
-            level: 50,
-        }],
-        company: {
-            name: 'Microsoft',
-        },
-    },
-    {
-        name: 'Jeff',
-        lastname: 'Button',
-        skills: [{
-            name: 'TypeScript',
-            level: 50,
-        }],
-        company: {
-            name: 'Microsoft',
-        },
-    },
-];
-
-const companyList: Company[] = [
-    {
-        name: 'Caspian',
-    },
-    {
-        name: 'Microsoft',
+        name: 'Charles',
+        lastname: 'Xavier',
+        skills: [{ name: 'Telepathy', level: 90}],
+        company: {  name: 'X-Men' },
     },
 ];
 
@@ -82,45 +50,18 @@ const columns: Array<TableColumn<Person>> = [
             content: 'First',
             sortOrder: SortOrder.DESC,
         },
-
-        sort: (props: Person[], sortOrder: SortOrder) =>
-            props.sort((a: Person, b: Person) => {
-                if (sortOrder === SortOrder.DESC) {
-                    return a.name > b.name ? 1 : -1;
-                }
-                return a.name < b.name ? 1 : -1;
-            }),
-        cells: (props: Person) => <span> {props.name} </span>,
-        expander: <div>Expander</div>,
+        sort: sortFunc,
+        cells: (props: Person) => <span>{props.name}</span>,
     },
     {
-        heading: {
-            content: 'Last',
-        },
-
-        sort: (props: Person[], sortOrder: SortOrder) =>
-            props.sort((a: Person, b: Person) => a.lastname > b.lastname ? 1 : -1),
-        cells: (props: Person) => <span> {props.lastname} </span>,
-        expander: <div>Expander</div>,
+        heading: { content: 'Last' },
+        cells: (props: Person) => <span>{props.lastname}</span>,
     },
     {
-        heading: {
-            content: 'Company',
-        },
-        cells: (props: Person) => <span> {props.company.name} </span>,
-        sort: (props: Person[], sortOrder: SortOrder) =>
-            props.sort((a: Person, b: Person) => {
-                if (sortOrder === SortOrder.DESC) {
-                    return a.company.name > b.company.name ? 1 : -1;
-                }
-                return a.company.name < b.company.name ? 1 : -1;
-            }),
-
+        heading: { content: 'Company' },
+        cells: (props: Person) => <span>{props.company.name}</span>,
     },
 ];
-
-const handleRowClick = (e: any) => { return; };
-const handleHeadingClick = (e: any) => { return; };
 
 // tslint:disable-next-line:no-unused-expression
 /* injectGlobal`
@@ -131,11 +72,6 @@ body {
 `; */
 
 ReactDOM.render(
-    <Table
-        columns={columns}
-        data={personList}
-        onRowClick={handleRowClick}
-        onHeadingClick={handleHeadingClick}
-    />,
+    <Table columns={columns} data={data} />,
     document.getElementById('root'),
 );

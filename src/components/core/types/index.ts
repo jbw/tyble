@@ -8,7 +8,7 @@ export interface Style {
 }
 
 export interface Sortable<T> {
-    sort: ColumnSort<T[]>;
+    sort?: ColumnSort<T[]>;
 }
 
 export enum SortOrder {

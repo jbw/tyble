@@ -79,7 +79,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState>
         return this.props.columns.map((column: TableColumn<T>, index: number) => {
 
             let sortOrder: SortOrder = SortOrder.NONE;
-            if (column.heading.content === this.state.columnSortName) {
+            if (column.sort && column.heading.content === this.state.columnSortName) {
                 sortOrder = this.state.columnSortOrder;
             }
 
@@ -134,17 +134,14 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState>
 
     private handleHeadingOnClick(e: MouseEvent, heading: string) {
 
-        if (this.state.columnSortOrder === SortOrder.ASC) {
+        const { columnSortOrder } = this.state;
+
+        if (columnSortOrder === SortOrder.ASC) {
             this.setState({
                 columnSortName: heading,
                 columnSortOrder: SortOrder.DESC,
             });
-        } else if (this.state.columnSortOrder === SortOrder.DESC) {
-            this.setState({
-                columnSortName: heading,
-                columnSortOrder: SortOrder.ASC,
-            });
-        } else {
+        } else if (columnSortOrder === SortOrder.DESC || columnSortOrder === SortOrder.NONE) {
             this.setState({
                 columnSortName: heading,
                 columnSortOrder: SortOrder.ASC,

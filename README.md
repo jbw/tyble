@@ -2,12 +2,15 @@
 <br>
 Tyble
 <br>
+</h1>
+<h2 align="center">
 
 `tyble` is a typesafe React table written in TypeScript.
 
+
 [![Master Status](https://travis-ci.org/jbw/tyble.svg?branch=master)](https://travis-ci.org/jbw/tyble)
 [![Develop Status](https://travis-ci.org/jbw/tyble.svg?branch=develop)](https://travis-ci.org/jbw/tyble)
-</h1>
+</h2>
 
 # Features
 
@@ -83,7 +86,7 @@ If you want sorting you can write a custom sorting method to enable it on a colu
 
 ```typescript
 const sortFunc = (props: Person[], sortOrder: SortOrder) => {
-    props.sort((a: Person, b: Person) => {
+   return props.sort((a: Person, b: Person) => {
 
         if (sortOrder === SortOrder.DESC) {
             return a.name > b.name ? 1 : -1;
@@ -119,7 +122,11 @@ const columns: Array<TableColumn<Person>> = [
     },
 ];
 
-<Tyble data={data} columns={columns} />;
+ReactDOM.render(
+    <Table columns={columns} data={data} />,
+    document.getElementById('root'),
+);
+
 
 ```
 
