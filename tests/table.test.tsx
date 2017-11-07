@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 
 import * as renderer from 'react-test-renderer';
 
-import { Table, SortOrder, TableColumn } from '../src/components';
+import { Tyble, SortOrder, TableColumn } from '../src/tyble';
 
 interface Person {
     name: string;
@@ -103,7 +103,7 @@ const getTopRowLastNameColumnCellContent = (componentJson: any) => {
 describe('table', () => {
     it('should contain data passed to it ', () => {
 
-        const component = renderer.create(<Table data={data} columns={columns} />);
+        const component = renderer.create(<Tyble data={data} columns={columns} />);
         const tree = component.toJSON();
 
         const row = tree.children[1].children;
@@ -119,7 +119,7 @@ describe('table', () => {
     });
 
     it('should sort ASC and DESC', () => {
-        const component = renderer.create(<Table data={data} columns={columns} />);
+        const component = renderer.create(<Tyble data={data} columns={columns} />);
         const tree: any = component.toTree().instance;
 
         const unsortedCellContent = getTopRowLastNameColumnCellContent(component.toJSON());
