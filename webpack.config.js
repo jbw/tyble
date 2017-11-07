@@ -5,7 +5,7 @@ var config = {
 
   entry: {
     "tyble": [
-      "./src/components/index.ts",
+      "./src/tyble/index.ts",
     ],
   },
 
