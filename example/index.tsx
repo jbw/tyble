@@ -1,9 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { injectGlobal } from 'styled-components';
 
 // tslint:disable-next-line:no-implicit-dependencies
-import { SortOrder, Table, TableColumn } from 'tyble';
+import { SortOrder, Table, TableColumn } from '../src/components';
 
 interface Person {
     name: string;
@@ -124,12 +123,12 @@ const handleRowClick = (e: any) => { return; };
 const handleHeadingClick = (e: any) => { return; };
 
 // tslint:disable-next-line:no-unused-expression
-injectGlobal`
+/* injectGlobal`
 body {
     font-family: 'Lato';
     margin: 0
 }
-`;
+`; */
 
 ReactDOM.render(
     <Table
