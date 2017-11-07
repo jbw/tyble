@@ -11,7 +11,8 @@
         "lint:css": "./node_modules/.bin/stylelint ./src/**/*.tsx",
         "lint:ts": "./node_modules/.bin/tslint -p tsconfig.json -c tslint.json -t stylish",
         "prepublishOnly": "./node_modules/.bin/webpack -p",
-        "test": "./node_modules/.bin/jest"
+        "test": "./node_modules/.bin/jest",
+        "clean-install": "rm -rf node_modules/ && yarn cache clean && yarn install --pure-lockfile"
     },
     "files": [
         "dist/"
