@@ -11,12 +11,12 @@
         "removeComments": true,
         "jsx": "react",
         "moduleResolution": "node",
-        "strict": false,
+        "strict": true,
         "baseUrl": ".",
         "lib": [
             "es6",
             "dom"
-        ],
+        ]
         /*"paths": {
             "@components/*": [ "src/components/*" ],
             "@containers/*": [ "src/components/containers/*" ]

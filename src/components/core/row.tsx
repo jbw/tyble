@@ -41,7 +41,7 @@ export class Row extends React.Component<RowProps> {
     }
 }
 
-const RowStyled: StyledComponentClass<RowProps, Row> = styled(Row) `
+const RowStyled: StyledComponentClass<any, Row> = styled(Row as any) `
   width: 100%;
   display: flex;
   border-top: 1px solid #e6e6e6;
