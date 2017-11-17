@@ -33,6 +33,8 @@ npm i tyble
 
 # Example
 
+Checkout some examples in the `example` directory.
+
 ## Types
 
 You can define our interfaces and types to be used by `tyble`.
