@@ -1,0 +1,27 @@
+.tyble {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 auto;
+    .heading-section {
+        display: flex;
+        cursor: pointer;
+        border-top: 1px solid lightgray;
+        .heading {
+            display: flex;
+            width: 100%;
+            background: #ff8080;
+            padding: 15px;
+        }
+    }
+    .row {
+        display: flex;
+        padding: 15px;
+        width: 100%;
+        border-top: 1px solid lightgray;
+        .cell {
+            display: flex;
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+    }
+}
