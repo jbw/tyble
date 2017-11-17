@@ -35,7 +35,7 @@ npm i tyble
 
 ## Types
 
-You can define our interfaces and types to be used by `tyble`. 
+You can define our interfaces and types to be used by `tyble`.
 
 ```typescript
 import * as React from 'react';
@@ -63,7 +63,7 @@ interface Company {
 
 ## Data
 
-Example data to be passed into `tyble`. This could be from an external web api etc. 
+Example data to be passed into `tyble`. This could be from an external web api etc.
 
 ```typescript
 const data: Person[] = [
@@ -121,13 +121,34 @@ const columns: Array<TableColumn<Person>> = [
         cells: (props: Person) => <span>{props.company.name}</span>
     },
 ];
+```
 
+## Rendering
+
+Standard
+
+```jsx
 ReactDOM.render(
     <Table columns={columns} data={data} />,
     document.getElementById('root'),
 );
+```
 
+JSX Style
 
+```jsx
+<Table className={'tyble'}>
+    <HeadingSection>
+        <Heading content='Heading 1' />
+    </HeadingSection>
+    <RowSection>
+        <Row>
+            <Cell content='Cell 1' />
+            <Cell content='Cell 2' />
+            <Cell content='Cell 3' />
+        </Row>
+    </RowSection>
+</Table>;
 ```
 
 # Running the tests
