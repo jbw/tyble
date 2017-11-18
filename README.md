@@ -131,6 +131,7 @@ These are all of the props for `<Tyble />` component.
 ### Theme Props
 
 Here are all the props and defaults for the `ThemeProps` object. Creating your own allows you to customize the default theme. You can also, if you prefer, create only a partial theme to only override certain parts.
+
 | Name                 | Default           |
 | -------------------- | ----------------- |
 | headingFontColor     | #4a4a4a           |
