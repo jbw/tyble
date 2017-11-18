@@ -17,7 +17,6 @@
         "no-duplicate-variable": true,
         "no-eval": true,
         "no-trailing-whitespace": true,
-
         "no-unsafe-finally": true,
         "one-line": [
             true,
@@ -52,7 +51,7 @@
     "rules": {
         "ordered-imports": false,
         "object-literal-sort-keys": false,
-        "trailing-comma":[
+        "trailing-comma": [
             false
         ],
         "interface-name": [
@@ -78,13 +77,13 @@
             true,
             "spaces"
         ],
+        "no-empty-interface": false,
         "no-eval": true,
         "no-internal-module": true,
         "no-trailing-whitespace": true,
         "no-unsafe-finally": true,
         "no-var-keyword": true,
         "arrow-parens": false,
-
         "one-line": [
             true,
             "check-open-brace",
