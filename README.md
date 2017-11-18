@@ -142,7 +142,7 @@ Here are all the props and defaults for the `ThemeProps` object. Creating your o
 | headingTextTransform | uppercase         |
 | headingPadding       | 15px              |
 | rowSeparatorColor    | 1px solid #e6e6e6 |
-| rowBgColor           |                   |
+| rowBgColor           | `none`            |
 | rowAltBgColor        | red               |
 | rowHoverColor        | #f5f8fc           |
 | rowPadding           | 15px              |
@@ -150,7 +150,7 @@ Here are all the props and defaults for the `ThemeProps` object. Creating your o
 | rowTransition        | all 0.5s ease     |
 | cellFontSize         | 12px              |
 | cellFontColor        | #4a4a4a           |
-| cellBgColor          |                   |
+| cellBgColor          | `none`            |
 
 ## Types
 
