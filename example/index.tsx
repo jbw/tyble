@@ -1,27 +1,45 @@
+
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { injectGlobal, ThemeProvider } from 'styled-components';
 
-import { SortOrder, Tyble, TableColumn } from '../src/tyble';
+import Tyble, {
+    CellStyled as Cell,
+    RowStyled as Row,
+    RowSection,
+    HeadingStyled as Heading,
+    HeadingSectionStyled as HeadingSection,
+    TableStyled as Table,
+    ThemeProps,
+    TableColumn,
+    SortOrder
 
-interface Person {
-    name: string;
-    lastname: string;
-    skills: Skill[];
-    company: Company;
-}
+} from '../dist/tyble';
 
-interface Skill {
-    name: string;
-    level: number;
-}
-interface Company {
-    name: string;
-}
+import { Person, Skill, Company } from './types';
+
+import './theme.scss';
+
+const data: any[] = [
+    {
+        name: 'Jason',
+        lastname: 'Watson',
+        skills: [{ name: 'TypeScript', level: 100 }],
+        company: { name: 'Caspian' },
+    },
+    {
+        name: 'Charles',
+        lastname: 'Xavier',
+        skills: [{ name: 'Telepathy', level: 90 }],
+        company: { name: 'X-Men' }
+    },
+
+];
 
 const sortFunc = (props: Person[], sortOrder: SortOrder) => {
-   return props.sort((a: Person, b: Person) => {
+    return props.sort((a: Person, b: Person) => {
 
-        if (sortOrder === SortOrder.DESC) {
+        if (sortOrder) {
             return a.name > b.name ? 1 : -1;
         }
         return a.name < b.name ? 1 : -1;
@@ -29,29 +47,11 @@ const sortFunc = (props: Person[], sortOrder: SortOrder) => {
     });
 };
 
-const data: Person[] = [
-    {
-        name: 'Jason',
-        lastname: 'Watson',
-        skills: [{  name: 'TypeScript',  level: 100 }],
-        company: {  name: 'Caspian' },
-    },
-    {
-        name: 'Charles',
-        lastname: 'Xavier',
-        skills: [{ name: 'Telepathy', level: 90}],
-        company: {  name: 'X-Men' },
-    },
-];
-
 const columns: Array<TableColumn<Person>> = [
     {
-        heading: {
-            content: 'First',
-            sortOrder: SortOrder.DESC,
-        },
+        heading: { content: 'First' },
         sort: sortFunc,
-        cells: (props: Person) => <span>{props.name}</span>,
+        cells: (props: Person) => <div>{props.name}</div>,
     },
     {
         heading: { content: 'Last' },
@@ -63,15 +63,84 @@ const columns: Array<TableColumn<Person>> = [
     },
 ];
 
-// tslint:disable-next-line:no-unused-expression
-/* injectGlobal`
-body {
-    font-family: 'Lato';
-    margin: 0
-}
-`; */
+const sassThemed =
+    <Tyble
+        columns={columns}
+        data={data}
+        className={'tyble'}
+        defaultSort={{ column: 'First', sortOrder: SortOrder.ASC }}
+    />;
 
-ReactDOM.render(
-    <Tyble columns={columns} data={data} />,
-    document.getElementById('root'),
-);
+const defaultThemed =
+    <Tyble
+        columns={columns}
+        data={data}
+        defaultSort={{ column: 'First', sortOrder: SortOrder.ASC }}
+    />;
+
+const theme: ThemeProps = {
+    headingBgColor: 'blue'
+};
+
+const styledThemeOverride =
+    <Tyble
+        columns={columns}
+        data={data}
+        theme={theme}
+        defaultSort={{ column: 'First', sortOrder: SortOrder.ASC }}
+    />;
+
+const jsxSass =
+    <Table className={'tyble'}>
+        <HeadingSection>
+            <Heading content='Heading 1' />
+        </HeadingSection>
+        <RowSection>
+            <Row>
+                <Cell content='Cell 1' />
+                <Cell content='Cell 2' />
+                <Cell content='Cell 3' />
+            </Row>
+        </RowSection>
+    </Table>;
+
+const jsxStyledComponentCustomTheme =
+    <ThemeProvider theme={theme}>
+        <Table>
+            <HeadingSection>
+                <Heading content='Heading 1' />
+            </HeadingSection>
+            <RowSection>
+                <Row>
+                    <Cell content='Cell 1' />
+                    <Cell content='Cell 2' />
+                    <Cell
+                        content={<div style={{ background: 'red' }}>Cell 3</div>}
+                    />
+                </Row>
+            </RowSection>
+        </Table>
+    </ThemeProvider>;
+
+const jsxStyledComponentDefaultTheme =
+    <Table>
+        <HeadingSection>
+            <Heading content='Heading 1' />
+        </HeadingSection>
+        <RowSection>
+            <Row>
+                <Cell content='Cell 1' />
+                <Cell content='Cell 2' />
+                <Cell
+                    content={<div style={{ background: 'red' }}>Cell 3</div>}
+                />
+            </Row>
+        </RowSection>
+    </Table>;
+
+ReactDOM.render(defaultThemed, document.getElementById('root'));
+// ReactDOM.render(sassThemed, document.getElementById('root'));
+// ReactDOM.render(styledThemeOverride, document.getElementById('root'));
+// ReactDOM.render(jsxStyledComponentCustomTheme, document.getElementById('root'));
+// ReactDOM.render(jsxStyledComponentDefaultTheme, document.getElementById('root'));
+// ReactDOM.render(jsxSass, document.getElementById('root'));

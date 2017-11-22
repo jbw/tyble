@@ -1,3 +1,6 @@
-export * from './core/types';
-export { default as Tyble } from './containers/table-container';
-export * from './containers/table-container';
+
+export * from './types';
+export * from './presentation';
+export * from './styled';
+
+export { default } from './containers/table-container';
