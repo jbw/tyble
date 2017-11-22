@@ -52,7 +52,7 @@ npm i tyble
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { Tyble, SortOrder, TableColumn } from 'tyble';
+import Tyble, { SortOrder, TableColumn } from 'tyble';
 
 interface Person {
     name: string;
