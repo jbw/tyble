@@ -1,40 +1,43 @@
 import * as React from 'react';
-
-import Heading from '../core/heading';
-import Row from '../core/row';
-import TableWrapper from '../core/wrappers/table-wrapper';
-import HeadingWrapper from '../core/wrappers/heading-wrapper';
-import RowWrapper from '../core/wrappers/row-wrapper';
+import { ThemeProvider } from 'styled-components';
+import { HeadingProps } from '../presentation/heading';
+import { CellProps } from '../presentation/cell';
+import Heading from '../styled/heading';
+import Row from '../styled/row';
+import Cell from '../styled/cell';
+import Table from '../styled/table';
+import HeadingSection from '../styled/heading-section';
+import RowSection from '../presentation/row-section';
 
 import {
-    CellRender,
     MouseClickFunc,
     MouseEvent,
-    Sortable,
     SortOrder,
-} from '../core/types';
+    ThemeProps,
+    defaultTheme,
+    TableColumn,
+    Sort,
+    TableCell
+} from '../types';
 
-export interface TableColumn<T> extends Sortable<T> {
-    heading: TableHeading;
-    expander?: JSX.Element;
-    cells?: CellRender<T>;
+interface OrderedRowProps {
+    index: number;
+    cells: TableCell[];
+}
+
+interface HeadingsAndRows {
+    headings: HeadingProps[];
+    rows: OrderedRowProps[];
 }
 
 export interface TableProps<T> {
     columns: Array<TableColumn<T>>;
     data: T[];
-
+    theme?: ThemeProps;
+    defaultSort?: Sort;
     onHeadingClick?: MouseClickFunc;
     onRowClick?: MouseClickFunc;
-}
-
-export interface TableHeading {
-    content: string;
-    sortOrder?: SortOrder;
-}
-
-interface TableCell {
-    content: JSX.Element;
+    className?: string;
 }
 
 export interface TableState {
@@ -42,12 +45,13 @@ export interface TableState {
     columnSortOrder: SortOrder;
 }
 
-interface OrderedRowProps {
-    index: number;
-    cells: TableCell[];
-}
+export default class TableContainer<T> extends React.Component<TableProps<T>, TableState> {
 
-export default class Tyble<T> extends React.Component<TableProps<T>, TableState> {
+    public static defaultProps: TableProps<any> = {
+        theme: defaultTheme,
+        columns: [],
+        data: [],
+    };
 
     constructor(props: TableProps<T>) {
         super(props);
@@ -55,57 +59,88 @@ export default class Tyble<T> extends React.Component<TableProps<T>, TableState>
         this.handleHeadingOnClick = this.handleHeadingOnClick.bind(this);
         this.handleRowOnClick = this.handleRowOnClick.bind(this);
 
+        let column;
+        let sortOrder = SortOrder.NONE;
+
+        if (this.props.defaultSort) {
+            column = this.props.defaultSort.column;
+            sortOrder = this.props.defaultSort.sortOrder;
+        }
+
         this.state = {
-            columnSortName: undefined,
-            columnSortOrder: SortOrder.NONE,
+            columnSortName: column,
+            columnSortOrder: sortOrder,
         };
 
     }
 
     public render() {
-        return (
-            <TableWrapper>
-                <HeadingWrapper>
-                    {this.makeHeadings()}
-                </HeadingWrapper>
-                <RowWrapper>
-                    {this.makeRows()}
-                </RowWrapper>
-            </TableWrapper>
-        );
+
+        const theme = { ...defaultTheme, ...this.props.theme };
+
+        const { headings, rows } = this.mapColumnsToRows();
+
+        const tyble =
+            <Table className={this.props.className}>
+                <HeadingSection>
+                    {this.getHeadings(headings)}
+                </HeadingSection>
+                <RowSection>
+                    {this.getRows(rows)}
+                </RowSection>
+            </Table>;
+
+        if (this.props.className) {
+            return tyble;
+        } else {
+            return (
+                <ThemeProvider theme={theme}>
+                    {tyble}
+                </ThemeProvider>
+            );
+        }
+
     }
 
-    private makeHeadings(): JSX.Element[] {
-        return this.props.columns.map((column: TableColumn<T>, index: number) => {
-
-            let sortOrder: SortOrder = SortOrder.NONE;
-            if (column.sort && column.heading.content === this.state.columnSortName) {
-                sortOrder = this.state.columnSortOrder;
-            }
-
-            return <Heading
-                key={index}
-                {...column.heading}
-                onClick={this.handleHeadingOnClick}
-                sortOrder={sortOrder}
-            />;
+    private getHeadings(headings: any): JSX.Element[] {
+        return headings.map((headingProps: HeadingProps, index: number) => {
+            return <Heading key={index} {...headingProps} />;
         });
     }
 
-    private makeRows(): JSX.Element[] {
-        const rows: OrderedRowProps[] = this.mapColumnsToRows();
+    private getRows(rows: any): JSX.Element {
 
-        return rows.map((row: OrderedRowProps, index: number) => {
-            const cells: TableCell[] = row.cells;
-            return <Row key={index} cells={cells} onClick={this.handleRowOnClick} />;
+        return rows.map((row: OrderedRowProps, rowIndex: number) => {
+            const tableCellProps: TableCell[] = row.cells;
+            const cells: any[] = [];
+
+            tableCellProps.map((cellProps: CellProps, cellIndex: number) => {
+                const cell = <Cell key={cellIndex} {...cellProps} />;
+                cells.push(cell);
+            });
+
+            return <Row key={rowIndex} onClick={this.handleRowOnClick}> {cells} </Row>;
         });
     }
 
-    private mapColumnsToRows(): OrderedRowProps[] {
+    private mapColumnsToRows(): HeadingsAndRows {
 
+        const headings: HeadingProps[] = [];
         const rows: OrderedRowProps[] = [];
+        const headingsAndRows: HeadingsAndRows = { headings, rows };
 
         this.props.columns.map((column: TableColumn<T>) => {
+
+            const headingProps: HeadingProps = {
+                ...column.heading,
+                onClick: this.handleHeadingOnClick,
+            };
+
+            if (column.sort && column.heading.content === this.state.columnSortName) {
+                headingProps.showDescSortingIcon = this.state.columnSortOrder === SortOrder.DESC;
+            }
+
+            headingsAndRows.headings.push(headingProps);
 
             let dataProps: T[] = this.props.data;
 
@@ -121,7 +156,8 @@ export default class Tyble<T> extends React.Component<TableProps<T>, TableState>
 
                     if (!row) {
                         row = { index, cells: [cell] };
-                        rows.push(row);
+
+                        headingsAndRows.rows.push(row);
                     } else {
                         row.cells.push(cell);
                     }
@@ -129,27 +165,23 @@ export default class Tyble<T> extends React.Component<TableProps<T>, TableState>
             });
         });
 
-        return rows;
+        return headingsAndRows;
     }
 
-    private handleHeadingOnClick(e: MouseEvent, heading: string) {
+    private handleHeadingOnClick(e: MouseEvent, headingClickProps: any) {
+        if (headingClickProps.isSortingEnabled) {
+            const { columnSortOrder } = this.state;
 
-        const { columnSortOrder } = this.state;
+            const sortToggle = columnSortOrder === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC;
 
-        if (columnSortOrder === SortOrder.ASC) {
             this.setState({
-                columnSortName: heading,
-                columnSortOrder: SortOrder.DESC,
+                columnSortName: headingClickProps.content,
+                columnSortOrder: sortToggle,
             });
-        } else if (columnSortOrder === SortOrder.DESC || columnSortOrder === SortOrder.NONE) {
-            this.setState({
-                columnSortName: heading,
-                columnSortOrder: SortOrder.ASC,
-            });
-        }
 
-        if (this.props.onHeadingClick) {
-            this.props.onHeadingClick(e);
+            if (this.props.onHeadingClick) {
+                this.props.onHeadingClick(e);
+            }
         }
     }
 
