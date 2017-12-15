@@ -1,22 +1,22 @@
 import * as React from 'react';
 
-import { MouseEvent, Style } from '../types';
+import { MouseClickFunc, MouseEvent, Style } from '../types';
 
 export interface RowProps extends Style {
-    onClick?: any;
+    onClick?: MouseClickFunc;
 }
 
 const Row: React.StatelessComponent<RowProps> = props => {
 
     const { onClick, className } = props;
-    const classNames = ['row', className].join(' ');
-    const handleClick = (e: MouseEvent) => {
+    const classNames: string = ['row', className].join(' ');
+    const handleClick: MouseClickFunc = (e: MouseEvent) => {
         if (onClick) {
             onClick(e);
         }
     };
 
-    return <div className={classNames} onClick={handleClick}> {props.children} </div>;
+    return <tr className={classNames} onClick={handleClick}>{props.children}</tr>;
 };
 
 export default Row;

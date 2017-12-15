@@ -1,7 +1,13 @@
-export type MouseEvent = React.MouseEvent<HTMLDivElement>;
+
+export type MouseEvent = React.MouseEvent<HTMLElement>;
 export type MouseClickFunc = (e: MouseEvent) => void;
-export type CellRender<T> = (props: T) => JSX.Element;
+export type HeadingClickEventFunc = (e: MouseEvent, headingClickProps: { content?: string, isSortingEnabled?: boolean}) => void;
+export type CellRender<T> = (props: T) => string;
 export type ColumnSort<T> = (props: T, sortOrder: SortOrder) => T;
+
+export interface Sortable<T> {
+    sort?: ColumnSort<T[]>;
+}
 
 export interface TableColumn<T> extends Sortable<T> {
     heading: TableHeading;
@@ -14,7 +20,7 @@ export interface TableHeading {
 }
 
 export interface TableCell {
-    content: JSX.Element | string;
+    content: string;
 }
 
 export interface Sort {
@@ -72,11 +78,8 @@ export interface ThemeProps {
 }
 
 export interface Style {
-    className?: any;
-}
-
-export interface Sortable<T> {
-    sort?: ColumnSort<T[]>;
+    className?: string;
+    style?: string;
 }
 
 export enum SortOrder {

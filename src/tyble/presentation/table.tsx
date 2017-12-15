@@ -5,7 +5,7 @@ import { Style } from '../types';
 export interface TableProps extends Style { }
 
 const Table: React.StatelessComponent<TableProps> = props => {
-    return <div className={props.className}> {props.children} </div>;
+    return <table className={props.className}>{props.children}</table>;
 };
 
 export default Table;

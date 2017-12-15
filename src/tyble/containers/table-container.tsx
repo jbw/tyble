@@ -31,7 +31,7 @@ interface HeadingsAndRows {
 }
 
 export interface TableProps<T> {
-    columns: Array<TableColumn<T>>;
+    columns: TableColumn<T>[];
     data: T[];
     theme?: ThemeProps;
     defaultSort?: Sort;
@@ -47,7 +47,7 @@ export interface TableState {
 
 export default class TableContainer<T> extends React.Component<TableProps<T>, TableState> {
 
-    public static defaultProps: TableProps<any> = {
+    public static defaultProps: TableProps<{}> = {
         theme: defaultTheme,
         columns: [],
         data: [],
@@ -59,10 +59,10 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         this.handleHeadingOnClick = this.handleHeadingOnClick.bind(this);
         this.handleRowOnClick = this.handleRowOnClick.bind(this);
 
-        let column;
-        let sortOrder = SortOrder.NONE;
+        let column: string | undefined;
+        let sortOrder: SortOrder = SortOrder.NONE;
 
-        if (this.props.defaultSort) {
+        if (this.props.defaultSort !== undefined) {
             column = this.props.defaultSort.column;
             sortOrder = this.props.defaultSort.sortOrder;
         }
@@ -74,13 +74,13 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
     }
 
-    public render() {
+    public render(): JSX.Element {
 
-        const theme = { ...defaultTheme, ...this.props.theme };
+        const theme: ThemeProps = { ...defaultTheme, ...this.props.theme };
 
         const { headings, rows } = this.mapColumnsToRows();
 
-        const tyble =
+        const tyble: JSX.Element =
             <Table className={this.props.className}>
                 <HeadingSection>
                     {this.getHeadings(headings)}
@@ -90,7 +90,7 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
                 </RowSection>
             </Table>;
 
-        if (this.props.className) {
+        if (this.props.className !== undefined) {
             return tyble;
         } else {
             return (
@@ -102,25 +102,26 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
     }
 
-    private getHeadings(headings: any): JSX.Element[] {
+    private getHeadings(headings: HeadingProps[]): JSX.Element[] {
         return headings.map((headingProps: HeadingProps, index: number) => {
             return <Heading key={index} {...headingProps} />;
         });
     }
 
-    private getRows(rows: any): JSX.Element {
+    private getRows(rows: OrderedRowProps[]): JSX.Element[] {
 
         return rows.map((row: OrderedRowProps, rowIndex: number) => {
             const tableCellProps: TableCell[] = row.cells;
-            const cells: any[] = [];
+            const cells: {}[] = [];
 
             tableCellProps.map((cellProps: CellProps, cellIndex: number) => {
-                const cell = <Cell key={cellIndex} {...cellProps} />;
+                const cell: JSX.Element = <Cell key={cellIndex} {...cellProps} />;
                 cells.push(cell);
             });
 
-            return <Row key={rowIndex} onClick={this.handleRowOnClick}> {cells} </Row>;
+            return <Row key={rowIndex} onClick={this.handleRowOnClick}>{cells}</Row>;
         });
+
     }
 
     private mapColumnsToRows(): HeadingsAndRows {
@@ -168,11 +169,11 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         return headingsAndRows;
     }
 
-    private handleHeadingOnClick(e: MouseEvent, headingClickProps: any) {
+    private handleHeadingOnClick(e: MouseEvent, headingClickProps: { content?: string, isSortingEnabled?: boolean }): void {
         if (headingClickProps.isSortingEnabled) {
             const { columnSortOrder } = this.state;
 
-            const sortToggle = columnSortOrder === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC;
+            const sortToggle: SortOrder = columnSortOrder === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC;
 
             this.setState({
                 columnSortName: headingClickProps.content,
@@ -185,7 +186,7 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         }
     }
 
-    private handleRowOnClick(e: MouseEvent) {
+    private handleRowOnClick(e: MouseEvent): void {
 
         if (this.props.onRowClick) {
             this.props.onRowClick(e);

@@ -1,7 +1,14 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+
 import { injectGlobal, ThemeProvider } from 'styled-components';
+
+import reactAxe from 'react-axe';
+
+if (process.env.NODE_ENV !== 'production') {
+    reactAxe(React, ReactDOM, 1000);
+}
 
 import Tyble, {
     CellStyled as Cell,
@@ -20,7 +27,7 @@ import { Person, Skill, Company } from './types';
 
 import './theme.scss';
 
-const data: any[] = [
+const data: Person[] = [
     {
         name: 'Jason',
         lastname: 'Watson',
@@ -36,34 +43,37 @@ const data: any[] = [
 
 ];
 
-const sortFunc = (props: Person[], sortOrder: SortOrder) => {
+type SortFunc = (props: Person[], sortOrder: SortOrder) => Person[];
+
+const sortFunc: SortFunc = (props: Person[], sortOrder: SortOrder): Person[] => {
     return props.sort((a: Person, b: Person) => {
 
         if (sortOrder) {
             return a.name > b.name ? 1 : -1;
         }
+
         return a.name < b.name ? 1 : -1;
 
     });
 };
 
-const columns: Array<TableColumn<Person>> = [
+const columns: TableColumn<Person>[] = [
     {
         heading: { content: 'First' },
         sort: sortFunc,
-        cells: (props: Person) => <div>{props.name}</div>,
+        cells: (props: Person): string => props.name,
     },
     {
         heading: { content: 'Last' },
-        cells: (props: Person) => <span>{props.lastname}</span>,
+        cells: (props: Person): string => props.lastname,
     },
     {
         heading: { content: 'Company' },
-        cells: (props: Person) => <span>{props.company.name}</span>,
+        cells: (props: Person): string => props.company.name,
     },
 ];
 
-const sassThemed =
+const sassThemed: JSX.Element =
     <Tyble
         columns={columns}
         data={data}
@@ -71,7 +81,7 @@ const sassThemed =
         defaultSort={{ column: 'First', sortOrder: SortOrder.ASC }}
     />;
 
-const defaultThemed =
+const defaultThemed: JSX.Element =
     <Tyble
         columns={columns}
         data={data}
@@ -82,7 +92,7 @@ const theme: ThemeProps = {
     headingBgColor: 'blue'
 };
 
-const styledThemeOverride =
+const styledThemeOverride: JSX.Element =
     <Tyble
         columns={columns}
         data={data}
@@ -90,7 +100,7 @@ const styledThemeOverride =
         defaultSort={{ column: 'First', sortOrder: SortOrder.ASC }}
     />;
 
-const jsxSass =
+const jsxSass: JSX.Element =
     <Table className={'tyble'}>
         <HeadingSection>
             <Heading content='Heading 1' />
@@ -104,7 +114,7 @@ const jsxSass =
         </RowSection>
     </Table>;
 
-const jsxStyledComponentCustomTheme =
+const jsxStyledComponentCustomTheme: JSX.Element =
     <ThemeProvider theme={theme}>
         <Table>
             <HeadingSection>
@@ -114,15 +124,13 @@ const jsxStyledComponentCustomTheme =
                 <Row>
                     <Cell content='Cell 1' />
                     <Cell content='Cell 2' />
-                    <Cell
-                        content={<div style={{ background: 'red' }}>Cell 3</div>}
-                    />
+                    <Cell style='background:red' content='Cell 3' />
                 </Row>
             </RowSection>
         </Table>
     </ThemeProvider>;
 
-const jsxStyledComponentDefaultTheme =
+const jsxStyledComponentDefaultTheme: JSX.Element =
     <Table>
         <HeadingSection>
             <Heading content='Heading 1' />

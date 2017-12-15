@@ -2,7 +2,7 @@ import styled, { StyledComponentClass } from 'styled-components';
 
 import Table from '../presentation/table';
 
-const TableStyled: StyledComponentClass<any, any> = styled(Table)`
+const TableStyled: StyledComponentClass = styled(Table)`
   display: flex;
   flex-flow: column nowrap;
   flex: 1 1 auto;

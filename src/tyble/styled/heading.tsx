@@ -12,7 +12,7 @@ const HeadingStyled: StyledComponentClass<HeadingProps, React.StatelessComponent
 
   &::before {
     padding-right: ${ props => props.showDescSortingIcon !== undefined ? '6px' : '0px'};
-    content: '${ props => getIconSymbol(props)}';
+    content: '${getIconSymbol}';
   }
 `;
 
