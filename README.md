@@ -36,15 +36,15 @@ Tyble
 
 ###  Yarn
 
-```bash
-yarn add tyble
-```
+`yarn add tyble`
 
 ###  NPM
 
-```bash
-npm i tyble
-```
+`npm i tyble`
+
+or for the in development branch:
+
+`npm i tyble@next`
 
 ## Example
 
