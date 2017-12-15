@@ -4,20 +4,25 @@
   "description": "",
   "main": "index.tsx",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --config ./webpack.conf.js",
-    "start": "./node_modules/.bin/webpack-dev-server --hot"
+    "build": "webpack --config webpack.config.js",
+    "build:prod": "webpack -p",
+    "start": "webpack-dev-server --hot",
+    "start:prod": "webpack-dev-server -p --hot"
   },
   "author": "Jason B Watson",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "styled-components": "^2.2.3"
   },
   "devDependencies": {
     "@types/node": "^8.0.34",
-    "@types/react": "^16.0.18",
-    "@types/react-dom": "^16.0.1",
+    "@types/react": "^16.0.25",
+    "@types/react-dom": "^16.0.3",
     "awesome-typescript-loader": "^3.2.3",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.19.0",
     "typescript": "^2.5.3",
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.2"
