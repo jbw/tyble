@@ -11,7 +11,7 @@ const Row: React.StatelessComponent<RowProps> = props => {
     const { onClick, className } = props;
     const classNames: string = ['row', className].join(' ');
     const handleClick: MouseClickFunc = (e: MouseEvent) => {
-        if (onClick) {
+        if (onClick !== undefined) {
             onClick(e);
         }
     };

@@ -31,6 +31,7 @@ interface HeadingsAndRows {
 }
 
 export interface TableProps<T> {
+    caption?: string;
     columns: TableColumn<T>[];
     data: T[];
     theme?: ThemeProps;
@@ -45,6 +46,14 @@ export interface TableState {
     columnSortOrder: SortOrder;
 }
 
+/**
+ * Main table container component.
+ *
+ * @export
+ * @class TableContainer
+ * @extends {React.Component<TableProps<T>, TableState>}
+ * @template T
+ */
 export default class TableContainer<T> extends React.Component<TableProps<T>, TableState> {
 
     public static defaultProps: TableProps<{}> = {
@@ -71,7 +80,6 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
             columnSortName: column,
             columnSortOrder: sortOrder,
         };
-
     }
 
     public render(): JSX.Element {
@@ -81,7 +89,7 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         const { headings, rows } = this.mapColumnsToRows();
 
         const tyble: JSX.Element =
-            <Table className={this.props.className}>
+            <Table className={this.props.className} caption={this.props.caption}>
                 <HeadingSection>
                     {this.getHeadings(headings)}
                 </HeadingSection>
@@ -99,7 +107,6 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
                 </ThemeProvider>
             );
         }
-
     }
 
     private getHeadings(headings: HeadingProps[]): JSX.Element[] {
@@ -121,7 +128,6 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
             return <Row key={rowIndex} onClick={this.handleRowOnClick}>{cells}</Row>;
         });
-
     }
 
     private mapColumnsToRows(): HeadingsAndRows {
@@ -137,7 +143,7 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
                 onClick: this.handleHeadingOnClick,
             };
 
-            if (column.sort && column.heading.content === this.state.columnSortName) {
+            if (column.sort !== undefined && column.heading.content === this.state.columnSortName) {
                 headingProps.showDescSortingIcon = this.state.columnSortOrder === SortOrder.DESC;
             }
 
@@ -145,22 +151,21 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
             let dataProps: T[] = this.props.data;
 
-            if (column.sort && this.state.columnSortName === column.heading.content) {
+            if (column.sort !== undefined && this.state.columnSortName === column.heading.content) {
                 dataProps = column.sort(this.props.data, this.state.columnSortOrder);
             }
 
             dataProps.map((cellData: T, index: number) => {
-                if (column.cells) {
+                if (column.cells !== undefined) {
 
                     let row: OrderedRowProps = rows.filter((r: OrderedRowProps) => r.index === index)[0];
                     const cell: TableCell = { content: column.cells(cellData) };
 
-                    if (!row) {
-                        row = { index, cells: [cell] };
-
-                        headingsAndRows.rows.push(row);
-                    } else {
+                    if (row !== undefined) {
                         row.cells.push(cell);
+                    } else {
+                        row = { index, cells: [cell] };
+                        headingsAndRows.rows.push(row);
                     }
                 }
             });
@@ -169,7 +174,8 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         return headingsAndRows;
     }
 
-    private handleHeadingOnClick(e: MouseEvent, headingClickProps: { content?: string, isSortingEnabled?: boolean }): void {
+    private handleHeadingOnClick(e: MouseEvent, headingClickProps: { content?: string, isSortingEnabled: boolean }): void {
+
         if (headingClickProps.isSortingEnabled) {
             const { columnSortOrder } = this.state;
 
@@ -180,7 +186,7 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
                 columnSortOrder: sortToggle,
             });
 
-            if (this.props.onHeadingClick) {
+            if (this.props.onHeadingClick !== undefined) {
                 this.props.onHeadingClick(e);
             }
         }
@@ -188,7 +194,7 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
     private handleRowOnClick(e: MouseEvent): void {
 
-        if (this.props.onRowClick) {
+        if (this.props.onRowClick !== undefined) {
             this.props.onRowClick(e);
         }
     }

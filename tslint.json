@@ -59,10 +59,7 @@
         "typedef": false,
         "match-default-export-name": false,
         "no-multiline-string": false,
-        /**
-         * Accessibility. The following rules should be turned on to guarantee the best user
-         * experience for keyboard and screen reader users.
-         */
+        "no-unsafe-any": false,
         "react-a11y-anchors": true,
         "react-a11y-aria-unsupported-elements": true,
         "react-a11y-event-has-role": true,
@@ -77,9 +74,6 @@
         "react-a11y-role-supports-aria-props": true,
         "react-a11y-tabindex-no-positive": true,
         "react-a11y-titles": true,
-        /**
-        * General
-        */
         "ordered-imports": false,
         "object-literal-sort-keys": false,
         "trailing-comma": [

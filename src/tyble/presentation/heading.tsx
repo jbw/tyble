@@ -18,7 +18,7 @@ export const Heading: React.StatelessComponent<HeadingProps> = (props: HeadingPr
     const classNames: string = ['heading', className].join(' ');
 
     const handleClick = (e: MouseEvent) => {
-        if (onClick) {
+        if (onClick !== undefined) {
             const isSortingEnabled: boolean = showDescSortingIcon !== undefined;
             onClick(e, { isSortingEnabled, content });
         }

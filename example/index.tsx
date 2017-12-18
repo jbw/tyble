@@ -83,6 +83,7 @@ const sassThemed: JSX.Element =
 
 const defaultThemed: JSX.Element =
     <Tyble
+        caption={'Summary of data'}
         columns={columns}
         data={data}
         defaultSort={{ column: 'First', sortOrder: SortOrder.ASC }}
