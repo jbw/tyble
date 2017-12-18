@@ -7,8 +7,8 @@ export interface TableProps extends Style { caption?: string; }
 const Table: React.StatelessComponent<TableProps> = props => {
     return (
         <table className={props.className}>
-            <caption>{props.caption}</caption>
-            {props.children}
+          {props.caption !== undefined ? <caption>{props.caption}</caption> : undefined}
+          {props.children}
         </table>);
 };
 

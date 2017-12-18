@@ -9,7 +9,7 @@ exports[`table create JSX component with SASS styling 1`] = `
       className="heading-section sc-bxivhb dxHksZ"
     >
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat evIAQd"
         onClick={[Function]}
         scope="col"
       >
@@ -21,7 +21,7 @@ exports[`table create JSX component with SASS styling 1`] = `
     className="row-section"
   >
     <tr
-      className="row sc-bwzfXH MtEGZ"
+      className="row sc-bwzfXH hTQFzO"
       onClick={[Function]}
     >
       <td
@@ -116,19 +116,21 @@ ShallowWrapper {
       Object {
         "cellBgColor": undefined,
         "cellFontColor": "#4a4a4a",
-        "cellFontSize": "12px",
-        "headingBgColor": " #f7f7f7",
+        "cellFontSize": "0.8em",
+        "headingBgColor": "#f7f7f7",
         "headingBorder": "1px solid #e6e6e6",
         "headingCursor": "pointer",
         "headingFontColor": "#4a4a4a",
-        "headingFontFamily": "News Cycle",
-        "headingFontSize": "14px",
-        "headingPadding": "15px",
+        "headingFontFamily": "Montserrat",
+        "headingFontSize": "0.9em",
+        "headingFontWeight": "normal",
+        "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
         "rowAltBgColor": "red",
-        "rowBgColor": undefined,
+        "rowBgColor": "white",
+        "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
-        "rowPadding": "15px",
+        "rowPadding": "0.8em",
         "rowSeparatorColor": "1px solid #e6e6e6",
         "rowTextAlign": "center",
         "rowTransition": "all 0.5s ease",
@@ -147,6 +149,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
+      "caption": undefined,
       "children": Array [
         <Styled(HeadingSection)>
           <Styled(Component)
@@ -419,6 +422,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
+        "caption": undefined,
         "children": Array [
           <Styled(HeadingSection)>
             <Styled(Component)
@@ -786,6 +790,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <Styled(Table)
+        caption={undefined}
         className={undefined}
       >
         <Styled(HeadingSection)>
@@ -842,12 +847,14 @@ ShallowWrapper {
         "headingFontColor": "#4a4a4a",
         "headingFontFamily": "News Cycle",
         "headingFontSize": "16px",
-        "headingPadding": "15px",
+        "headingFontWeight": "normal",
+        "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
         "rowAltBgColor": "red",
-        "rowBgColor": undefined,
+        "rowBgColor": "white",
+        "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
-        "rowPadding": "15px",
+        "rowPadding": "0.8em",
         "rowSeparatorColor": "black",
         "rowTextAlign": "center",
         "rowTransition": "all 0.5s ease",
@@ -859,6 +866,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
+        "caption": undefined,
         "children": Array [
           <Styled(HeadingSection)>
             <Styled(Component)
@@ -1134,6 +1142,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <Styled(Table)
+          caption={undefined}
           className={undefined}
         >
           <Styled(HeadingSection)>
@@ -1190,12 +1199,14 @@ ShallowWrapper {
           "headingFontColor": "#4a4a4a",
           "headingFontFamily": "News Cycle",
           "headingFontSize": "16px",
-          "headingPadding": "15px",
+          "headingFontWeight": "normal",
+          "headingPadding": "0.8em",
           "headingTextTransform": "uppercase",
           "rowAltBgColor": "red",
-          "rowBgColor": undefined,
+          "rowBgColor": "white",
+          "rowFontFamily": "Lato",
           "rowHoverColor": "#f5f8fc",
-          "rowPadding": "15px",
+          "rowPadding": "0.8em",
           "rowSeparatorColor": "black",
           "rowTextAlign": "center",
           "rowTransition": "all 0.5s ease",
@@ -1207,6 +1218,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "caption": undefined,
           "children": Array [
             <Styled(HeadingSection)>
               <Styled(Component)
@@ -1554,19 +1566,21 @@ ShallowWrapper {
       Object {
         "cellBgColor": undefined,
         "cellFontColor": "#4a4a4a",
-        "cellFontSize": "12px",
-        "headingBgColor": " #f7f7f7",
+        "cellFontSize": "0.8em",
+        "headingBgColor": "#f7f7f7",
         "headingBorder": "1px solid #e6e6e6",
         "headingCursor": "pointer",
         "headingFontColor": "#4a4a4a",
-        "headingFontFamily": "News Cycle",
-        "headingFontSize": "14px",
-        "headingPadding": "15px",
+        "headingFontFamily": "Montserrat",
+        "headingFontSize": "0.9em",
+        "headingFontWeight": "normal",
+        "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
         "rowAltBgColor": "red",
-        "rowBgColor": undefined,
+        "rowBgColor": "white",
+        "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
-        "rowPadding": "15px",
+        "rowPadding": "0.8em",
         "rowSeparatorColor": "1px solid #e6e6e6",
         "rowTextAlign": "center",
         "rowTransition": "all 0.5s ease",
@@ -1586,6 +1600,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <Styled(Table)
+        caption={undefined}
         className={undefined}
       >
         <Styled(HeadingSection)>
@@ -1635,19 +1650,21 @@ ShallowWrapper {
       "theme": Object {
         "cellBgColor": undefined,
         "cellFontColor": "#4a4a4a",
-        "cellFontSize": "12px",
-        "headingBgColor": " #f7f7f7",
+        "cellFontSize": "0.8em",
+        "headingBgColor": "#f7f7f7",
         "headingBorder": "1px solid #e6e6e6",
         "headingCursor": "pointer",
         "headingFontColor": "#4a4a4a",
-        "headingFontFamily": "News Cycle",
-        "headingFontSize": "14px",
-        "headingPadding": "15px",
+        "headingFontFamily": "Montserrat",
+        "headingFontSize": "0.9em",
+        "headingFontWeight": "normal",
+        "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
         "rowAltBgColor": "red",
-        "rowBgColor": undefined,
+        "rowBgColor": "white",
+        "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
-        "rowPadding": "15px",
+        "rowPadding": "0.8em",
         "rowSeparatorColor": "1px solid #e6e6e6",
         "rowTextAlign": "center",
         "rowTransition": "all 0.5s ease",
@@ -1659,6 +1676,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
+        "caption": undefined,
         "children": Array [
           <Styled(HeadingSection)>
             <Styled(Component)
@@ -1934,6 +1952,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <Styled(Table)
+          caption={undefined}
           className={undefined}
         >
           <Styled(HeadingSection)>
@@ -1983,19 +2002,21 @@ ShallowWrapper {
         "theme": Object {
           "cellBgColor": undefined,
           "cellFontColor": "#4a4a4a",
-          "cellFontSize": "12px",
-          "headingBgColor": " #f7f7f7",
+          "cellFontSize": "0.8em",
+          "headingBgColor": "#f7f7f7",
           "headingBorder": "1px solid #e6e6e6",
           "headingCursor": "pointer",
           "headingFontColor": "#4a4a4a",
-          "headingFontFamily": "News Cycle",
-          "headingFontSize": "14px",
-          "headingPadding": "15px",
+          "headingFontFamily": "Montserrat",
+          "headingFontSize": "0.9em",
+          "headingFontWeight": "normal",
+          "headingPadding": "0.8em",
           "headingTextTransform": "uppercase",
           "rowAltBgColor": "red",
-          "rowBgColor": undefined,
+          "rowBgColor": "white",
+          "rowFontFamily": "Lato",
           "rowHoverColor": "#f5f8fc",
-          "rowPadding": "15px",
+          "rowPadding": "0.8em",
           "rowSeparatorColor": "1px solid #e6e6e6",
           "rowTextAlign": "center",
           "rowTransition": "all 0.5s ease",
@@ -2007,6 +2028,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "caption": undefined,
           "children": Array [
             <Styled(HeadingSection)>
               <Styled(Component)
@@ -2295,7 +2317,7 @@ exports[`table create normal JSX 1`] = `
       className="heading-section sc-bxivhb dxHksZ"
     >
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat evIAQd"
         onClick={[Function]}
         scope="col"
       >
@@ -2307,7 +2329,7 @@ exports[`table create normal JSX 1`] = `
     className="row-section"
   >
     <tr
-      className="row sc-bwzfXH MtEGZ"
+      className="row sc-bwzfXH hTQFzO"
       onClick={[Function]}
     >
       <td
@@ -2342,7 +2364,7 @@ exports[`table create theme provided JSX 1`] = `
       className="heading-section sc-bxivhb lgUqnC"
     >
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat evIAQd"
         onClick={[Function]}
         scope="col"
       >
@@ -2354,7 +2376,7 @@ exports[`table create theme provided JSX 1`] = `
     className="row-section"
   >
     <tr
-      className="row sc-bwzfXH byTBti"
+      className="row sc-bwzfXH dCFFMJ"
       onClick={[Function]}
     >
       <td
@@ -2380,24 +2402,24 @@ exports[`table should contain data passed to it  1`] = `
 >
   <thead>
     <tr
-      className="heading-section sc-bxivhb eQcfwf"
+      className="heading-section sc-bxivhb npvRQ"
     >
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat lkWemV"
         onClick={[Function]}
         scope="col"
       >
         First
       </th>
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat lkWemV"
         onClick={[Function]}
         scope="col"
       >
         Last
       </th>
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat lkWemV"
         onClick={[Function]}
         scope="col"
       >
@@ -2409,46 +2431,46 @@ exports[`table should contain data passed to it  1`] = `
     className="row-section"
   >
     <tr
-      className="row sc-bwzfXH bgwvXw"
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Jason
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Watson
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Caspian
       </td>
     </tr>
     <tr
-      className="row sc-bwzfXH bgwvXw"
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Charles
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Xavier
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         X-Men
@@ -2464,24 +2486,24 @@ exports[`table should render without a theme 1`] = `
 >
   <thead>
     <tr
-      className="heading-section sc-bxivhb eQcfwf"
+      className="heading-section sc-bxivhb npvRQ"
     >
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat lkWemV"
         onClick={[Function]}
         scope="col"
       >
         First
       </th>
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat lkWemV"
         onClick={[Function]}
         scope="col"
       >
         Last
       </th>
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat lkWemV"
         onClick={[Function]}
         scope="col"
       >
@@ -2493,46 +2515,46 @@ exports[`table should render without a theme 1`] = `
     className="row-section"
   >
     <tr
-      className="row sc-bwzfXH bgwvXw"
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Charles
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Xavier
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         X-Men
       </td>
     </tr>
     <tr
-      className="row sc-bwzfXH bgwvXw"
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Jason
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Watson
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Caspian
@@ -2548,24 +2570,24 @@ exports[`table should sort DESC and ASC 1`] = `
 >
   <thead>
     <tr
-      className="heading-section sc-bxivhb eQcfwf"
+      className="heading-section sc-bxivhb npvRQ"
     >
       <th
-        className="heading sc-htpNat fXFvXl"
+        className="heading sc-htpNat eewAVl"
         onClick={[Function]}
         scope="col"
       >
         First
       </th>
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat lkWemV"
         onClick={[Function]}
         scope="col"
       >
         Last
       </th>
       <th
-        className="heading sc-htpNat ldqAdk"
+        className="heading sc-htpNat lkWemV"
         onClick={[Function]}
         scope="col"
       >
@@ -2577,46 +2599,46 @@ exports[`table should sort DESC and ASC 1`] = `
     className="row-section"
   >
     <tr
-      className="row sc-bwzfXH bgwvXw"
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Charles
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Xavier
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         X-Men
       </td>
     </tr>
     <tr
-      className="row sc-bwzfXH bgwvXw"
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Jason
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Watson
       </td>
       <td
-        className="cell sc-bdVaJa kZMAGP"
+        className="cell sc-bdVaJa ilUYd"
         style={Object {}}
       >
         Caspian
