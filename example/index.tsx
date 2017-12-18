@@ -139,9 +139,7 @@ const jsxStyledComponentDefaultTheme: JSX.Element =
             <Row>
                 <Cell content='Cell 1' />
                 <Cell content='Cell 2' />
-                <Cell
-                    content={<div style={{ background: 'red' }}>Cell 3</div>}
-                />
+                <Cell>Cell 3</Cell>
             </Row>
         </RowSection>
     </Table>;

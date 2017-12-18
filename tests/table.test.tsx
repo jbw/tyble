@@ -165,7 +165,7 @@ describe('table', () => {
                     <RowSection>
                         <Row>
                             <Cell content='Cell 1' />
-                            <Cell content='Cell 2' />
+                            <Cell>Cell 2</Cell>
                         </Row>
                     </RowSection>
                 </Table>

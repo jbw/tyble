@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Style } from '../types';
 
 export interface CellProps extends Style {
-    content: string;
+    content?: string;
 }
 
 export const Cell: React.StatelessComponent<CellProps> = props => {
@@ -11,7 +11,7 @@ export const Cell: React.StatelessComponent<CellProps> = props => {
 
     const style =  props.style || {};
 
-    return <td style={style} className={classNames}>{props.content}</td>;
+    return <td style={style} className={classNames}>{props.content || props.children}</td>;
 };
 
 export default Cell;
