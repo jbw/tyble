@@ -1,58 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`table create JSX component with SASS styling 1`] = `
-<div
+<table
   className="tyble sc-ifAKCX dElilx"
 >
-   
-  <div
-    className="heading-section sc-bxivhb dxHksZ"
-  >
-     
-    <div
-      className="heading sc-htpNat ldqAdk"
-      onClick={[Function]}
+  <thead>
+    <tr
+      className="heading-section sc-bxivhb dxHksZ"
     >
-      Heading 1
-    </div>
-     
-  </div>
-  <div
-    className="row-section "
-  >
-     
-    <div
-      className="row sc-bwzfXH MtEGZ"
-      onClick={[Function]}
-    >
-       
-      <div
-        className="cell sc-bdVaJa hkgyrY"
+      <th
+        className="heading sc-htpNat evIAQd"
+        onClick={[Function]}
+        scope="col"
       >
-         
+        Heading 1
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="row-section"
+  >
+    <tr
+      className="row sc-bwzfXH hTQFzO"
+      onClick={[Function]}
+    >
+      <td
+        className="cell sc-bdVaJa hkgyrY"
+        style={Object {}}
+      >
         Cell 1
-         
-      </div>
-      <div
+      </td>
+      <td
         className="cell sc-bdVaJa hkgyrY"
+        style={Object {}}
       >
-         
         Cell 2
-         
-      </div>
-      <div
+      </td>
+      <td
         className="cell sc-bdVaJa hkgyrY"
+        style={Object {}}
       >
-         
         Cell 3
-         
-      </div>
-       
-    </div>
-     
-  </div>
-   
-</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`table create Tyble component with SASS style 1`] = `
@@ -124,19 +116,21 @@ ShallowWrapper {
       Object {
         "cellBgColor": undefined,
         "cellFontColor": "#4a4a4a",
-        "cellFontSize": "12px",
-        "headingBgColor": " #f7f7f7",
+        "cellFontSize": "0.8em",
+        "headingBgColor": "#f7f7f7",
         "headingBorder": "1px solid #e6e6e6",
         "headingCursor": "pointer",
         "headingFontColor": "#4a4a4a",
-        "headingFontFamily": "News Cycle",
-        "headingFontSize": "14px",
-        "headingPadding": "15px",
+        "headingFontFamily": "Montserrat",
+        "headingFontSize": "0.9em",
+        "headingFontWeight": "normal",
+        "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
         "rowAltBgColor": "red",
-        "rowBgColor": undefined,
+        "rowBgColor": "white",
+        "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
-        "rowPadding": "15px",
+        "rowPadding": "0.8em",
         "rowSeparatorColor": "1px solid #e6e6e6",
         "rowTextAlign": "center",
         "rowTransition": "all 0.5s ease",
@@ -155,6 +149,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
+      "caption": undefined,
       "children": Array [
         <Styled(HeadingSection)>
           <Styled(Component)
@@ -175,68 +170,28 @@ ShallowWrapper {
           <Styled(Row)
             onClick={[Function]}
           >
-             
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Jason
-                   
-                </span>
-              }
+              content="Jason"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Watson
-                   
-                </span>
-              }
+              content="Watson"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Caspian
-                   
-                </span>
-              }
+              content="Caspian"
             />
-             
           </Styled(Row)>
           <Styled(Row)
             onClick={[Function]}
           >
-             
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Charles
-                   
-                </span>
-              }
+              content="Charles"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Xavier
-                   
-                </span>
-              }
+              content="Xavier"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  X-Men
-                   
-                </span>
-              }
+              content="X-Men"
             />
-             
           </Styled(Row)>
         </RowSection>,
       ],
@@ -316,68 +271,28 @@ ShallowWrapper {
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Jason
-                     
-                  </span>
-                }
+                content="Jason"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Watson
-                     
-                  </span>
-                }
+                content="Watson"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Caspian
-                     
-                  </span>
-                }
+                content="Caspian"
               />
-               
             </Styled(Row)>,
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Charles
-                     
-                  </span>
-                }
+                content="Charles"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Xavier
-                     
-                  </span>
-                }
+                content="Xavier"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    X-Men
-                     
-                  </span>
-                }
+                content="X-Men"
               />
-               
             </Styled(Row)>,
           ],
         },
@@ -389,53 +304,26 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                " ",
-                Array [
-                  <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Jason
-                         
-                      </span>
-                    }
-                  />,
-                  <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Watson
-                         
-                      </span>
-                    }
-                  />,
-                  <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Caspian
-                         
-                      </span>
-                    }
-                  />,
-                ],
-                " ",
+                <Styled(Component)
+                  content="Jason"
+                />,
+                <Styled(Component)
+                  content="Watson"
+                />,
+                <Styled(Component)
+                  content="Caspian"
+                />,
               ],
               "onClick": [Function],
             },
             "ref": null,
             "rendered": Array [
-              " ",
               Object {
                 "instance": null,
                 "key": "0",
                 "nodeType": "class",
                 "props": Object {
-                  "content": <span>
-                     
-                    Jason
-                     
-                  </span>,
+                  "content": "Jason",
                 },
                 "ref": null,
                 "rendered": null,
@@ -446,11 +334,7 @@ ShallowWrapper {
                 "key": "1",
                 "nodeType": "class",
                 "props": Object {
-                  "content": <span>
-                     
-                    Watson
-                     
-                  </span>,
+                  "content": "Watson",
                 },
                 "ref": null,
                 "rendered": null,
@@ -461,17 +345,12 @@ ShallowWrapper {
                 "key": "2",
                 "nodeType": "class",
                 "props": Object {
-                  "content": <span>
-                     
-                    Caspian
-                     
-                  </span>,
+                  "content": "Caspian",
                 },
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
               },
-              " ",
             ],
             "type": [Function],
           },
@@ -481,53 +360,26 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                " ",
-                Array [
-                  <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Charles
-                         
-                      </span>
-                    }
-                  />,
-                  <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Xavier
-                         
-                      </span>
-                    }
-                  />,
-                  <Styled(Component)
-                    content={
-                      <span>
-                         
-                        X-Men
-                         
-                      </span>
-                    }
-                  />,
-                ],
-                " ",
+                <Styled(Component)
+                  content="Charles"
+                />,
+                <Styled(Component)
+                  content="Xavier"
+                />,
+                <Styled(Component)
+                  content="X-Men"
+                />,
               ],
               "onClick": [Function],
             },
             "ref": null,
             "rendered": Array [
-              " ",
               Object {
                 "instance": null,
                 "key": "0",
                 "nodeType": "class",
                 "props": Object {
-                  "content": <span>
-                     
-                    Charles
-                     
-                  </span>,
+                  "content": "Charles",
                 },
                 "ref": null,
                 "rendered": null,
@@ -538,11 +390,7 @@ ShallowWrapper {
                 "key": "1",
                 "nodeType": "class",
                 "props": Object {
-                  "content": <span>
-                     
-                    Xavier
-                     
-                  </span>,
+                  "content": "Xavier",
                 },
                 "ref": null,
                 "rendered": null,
@@ -553,17 +401,12 @@ ShallowWrapper {
                 "key": "2",
                 "nodeType": "class",
                 "props": Object {
-                  "content": <span>
-                     
-                    X-Men
-                     
-                  </span>,
+                  "content": "X-Men",
                 },
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
               },
-              " ",
             ],
             "type": [Function],
           },
@@ -579,6 +422,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
+        "caption": undefined,
         "children": Array [
           <Styled(HeadingSection)>
             <Styled(Component)
@@ -599,68 +443,28 @@ ShallowWrapper {
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Jason
-                     
-                  </span>
-                }
+                content="Jason"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Watson
-                     
-                  </span>
-                }
+                content="Watson"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Caspian
-                     
-                  </span>
-                }
+                content="Caspian"
               />
-               
             </Styled(Row)>
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Charles
-                     
-                  </span>
-                }
+                content="Charles"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Xavier
-                     
-                  </span>
-                }
+                content="Xavier"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    X-Men
-                     
-                  </span>
-                }
+                content="X-Men"
               />
-               
             </Styled(Row)>
           </RowSection>,
         ],
@@ -740,68 +544,28 @@ ShallowWrapper {
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Jason
-                       
-                    </span>
-                  }
+                  content="Jason"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Watson
-                       
-                    </span>
-                  }
+                  content="Watson"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Caspian
-                       
-                    </span>
-                  }
+                  content="Caspian"
                 />
-                 
               </Styled(Row)>,
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Charles
-                       
-                    </span>
-                  }
+                  content="Charles"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Xavier
-                       
-                    </span>
-                  }
+                  content="Xavier"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      X-Men
-                       
-                    </span>
-                  }
+                  content="X-Men"
                 />
-                 
               </Styled(Row)>,
             ],
           },
@@ -813,53 +577,26 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  " ",
-                  Array [
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Jason
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Watson
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Caspian
-                           
-                        </span>
-                      }
-                    />,
-                  ],
-                  " ",
+                  <Styled(Component)
+                    content="Jason"
+                  />,
+                  <Styled(Component)
+                    content="Watson"
+                  />,
+                  <Styled(Component)
+                    content="Caspian"
+                  />,
                 ],
                 "onClick": [Function],
               },
               "ref": null,
               "rendered": Array [
-                " ",
                 Object {
                   "instance": null,
                   "key": "0",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Jason
-                       
-                    </span>,
+                    "content": "Jason",
                   },
                   "ref": null,
                   "rendered": null,
@@ -870,11 +607,7 @@ ShallowWrapper {
                   "key": "1",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Watson
-                       
-                    </span>,
+                    "content": "Watson",
                   },
                   "ref": null,
                   "rendered": null,
@@ -885,17 +618,12 @@ ShallowWrapper {
                   "key": "2",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Caspian
-                       
-                    </span>,
+                    "content": "Caspian",
                   },
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
                 },
-                " ",
               ],
               "type": [Function],
             },
@@ -905,53 +633,26 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  " ",
-                  Array [
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Charles
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Xavier
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          X-Men
-                           
-                        </span>
-                      }
-                    />,
-                  ],
-                  " ",
+                  <Styled(Component)
+                    content="Charles"
+                  />,
+                  <Styled(Component)
+                    content="Xavier"
+                  />,
+                  <Styled(Component)
+                    content="X-Men"
+                  />,
                 ],
                 "onClick": [Function],
               },
               "ref": null,
               "rendered": Array [
-                " ",
                 Object {
                   "instance": null,
                   "key": "0",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Charles
-                       
-                    </span>,
+                    "content": "Charles",
                   },
                   "ref": null,
                   "rendered": null,
@@ -962,11 +663,7 @@ ShallowWrapper {
                   "key": "1",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Xavier
-                       
-                    </span>,
+                    "content": "Xavier",
                   },
                   "ref": null,
                   "rendered": null,
@@ -977,17 +674,12 @@ ShallowWrapper {
                   "key": "2",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      X-Men
-                       
-                    </span>,
+                    "content": "X-Men",
                   },
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
                 },
-                " ",
               ],
               "type": [Function],
             },
@@ -1098,6 +790,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <Styled(Table)
+        caption={undefined}
         className={undefined}
       >
         <Styled(HeadingSection)>
@@ -1119,68 +812,28 @@ ShallowWrapper {
           <Styled(Row)
             onClick={[Function]}
           >
-             
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Jason
-                   
-                </span>
-              }
+              content="Jason"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Watson
-                   
-                </span>
-              }
+              content="Watson"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Caspian
-                   
-                </span>
-              }
+              content="Caspian"
             />
-             
           </Styled(Row)>
           <Styled(Row)
             onClick={[Function]}
           >
-             
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Charles
-                   
-                </span>
-              }
+              content="Charles"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Xavier
-                   
-                </span>
-              }
+              content="Xavier"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  X-Men
-                   
-                </span>
-              }
+              content="X-Men"
             />
-             
           </Styled(Row)>
         </RowSection>
       </Styled(Table)>,
@@ -1194,12 +847,14 @@ ShallowWrapper {
         "headingFontColor": "#4a4a4a",
         "headingFontFamily": "News Cycle",
         "headingFontSize": "16px",
-        "headingPadding": "15px",
+        "headingFontWeight": "normal",
+        "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
         "rowAltBgColor": "red",
-        "rowBgColor": undefined,
+        "rowBgColor": "white",
+        "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
-        "rowPadding": "15px",
+        "rowPadding": "0.8em",
         "rowSeparatorColor": "black",
         "rowTextAlign": "center",
         "rowTransition": "all 0.5s ease",
@@ -1211,6 +866,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
+        "caption": undefined,
         "children": Array [
           <Styled(HeadingSection)>
             <Styled(Component)
@@ -1231,68 +887,28 @@ ShallowWrapper {
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Jason
-                     
-                  </span>
-                }
+                content="Jason"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Watson
-                     
-                  </span>
-                }
+                content="Watson"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Caspian
-                     
-                  </span>
-                }
+                content="Caspian"
               />
-               
             </Styled(Row)>
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Charles
-                     
-                  </span>
-                }
+                content="Charles"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Xavier
-                     
-                  </span>
-                }
+                content="Xavier"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    X-Men
-                     
-                  </span>
-                }
+                content="X-Men"
               />
-               
             </Styled(Row)>
           </RowSection>,
         ],
@@ -1372,68 +988,28 @@ ShallowWrapper {
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Jason
-                       
-                    </span>
-                  }
+                  content="Jason"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Watson
-                       
-                    </span>
-                  }
+                  content="Watson"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Caspian
-                       
-                    </span>
-                  }
+                  content="Caspian"
                 />
-                 
               </Styled(Row)>,
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Charles
-                       
-                    </span>
-                  }
+                  content="Charles"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Xavier
-                       
-                    </span>
-                  }
+                  content="Xavier"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      X-Men
-                       
-                    </span>
-                  }
+                  content="X-Men"
                 />
-                 
               </Styled(Row)>,
             ],
           },
@@ -1445,53 +1021,26 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  " ",
-                  Array [
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Jason
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Watson
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Caspian
-                           
-                        </span>
-                      }
-                    />,
-                  ],
-                  " ",
+                  <Styled(Component)
+                    content="Jason"
+                  />,
+                  <Styled(Component)
+                    content="Watson"
+                  />,
+                  <Styled(Component)
+                    content="Caspian"
+                  />,
                 ],
                 "onClick": [Function],
               },
               "ref": null,
               "rendered": Array [
-                " ",
                 Object {
                   "instance": null,
                   "key": "0",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Jason
-                       
-                    </span>,
+                    "content": "Jason",
                   },
                   "ref": null,
                   "rendered": null,
@@ -1502,11 +1051,7 @@ ShallowWrapper {
                   "key": "1",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Watson
-                       
-                    </span>,
+                    "content": "Watson",
                   },
                   "ref": null,
                   "rendered": null,
@@ -1517,17 +1062,12 @@ ShallowWrapper {
                   "key": "2",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Caspian
-                       
-                    </span>,
+                    "content": "Caspian",
                   },
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
                 },
-                " ",
               ],
               "type": [Function],
             },
@@ -1537,53 +1077,26 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  " ",
-                  Array [
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Charles
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Xavier
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          X-Men
-                           
-                        </span>
-                      }
-                    />,
-                  ],
-                  " ",
+                  <Styled(Component)
+                    content="Charles"
+                  />,
+                  <Styled(Component)
+                    content="Xavier"
+                  />,
+                  <Styled(Component)
+                    content="X-Men"
+                  />,
                 ],
                 "onClick": [Function],
               },
               "ref": null,
               "rendered": Array [
-                " ",
                 Object {
                   "instance": null,
                   "key": "0",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Charles
-                       
-                    </span>,
+                    "content": "Charles",
                   },
                   "ref": null,
                   "rendered": null,
@@ -1594,11 +1107,7 @@ ShallowWrapper {
                   "key": "1",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Xavier
-                       
-                    </span>,
+                    "content": "Xavier",
                   },
                   "ref": null,
                   "rendered": null,
@@ -1609,17 +1118,12 @@ ShallowWrapper {
                   "key": "2",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      X-Men
-                       
-                    </span>,
+                    "content": "X-Men",
                   },
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
                 },
-                " ",
               ],
               "type": [Function],
             },
@@ -1638,6 +1142,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <Styled(Table)
+          caption={undefined}
           className={undefined}
         >
           <Styled(HeadingSection)>
@@ -1659,68 +1164,28 @@ ShallowWrapper {
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Jason
-                     
-                  </span>
-                }
+                content="Jason"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Watson
-                     
-                  </span>
-                }
+                content="Watson"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Caspian
-                     
-                  </span>
-                }
+                content="Caspian"
               />
-               
             </Styled(Row)>
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Charles
-                     
-                  </span>
-                }
+                content="Charles"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Xavier
-                     
-                  </span>
-                }
+                content="Xavier"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    X-Men
-                     
-                  </span>
-                }
+                content="X-Men"
               />
-               
             </Styled(Row)>
           </RowSection>
         </Styled(Table)>,
@@ -1734,12 +1199,14 @@ ShallowWrapper {
           "headingFontColor": "#4a4a4a",
           "headingFontFamily": "News Cycle",
           "headingFontSize": "16px",
-          "headingPadding": "15px",
+          "headingFontWeight": "normal",
+          "headingPadding": "0.8em",
           "headingTextTransform": "uppercase",
           "rowAltBgColor": "red",
-          "rowBgColor": undefined,
+          "rowBgColor": "white",
+          "rowFontFamily": "Lato",
           "rowHoverColor": "#f5f8fc",
-          "rowPadding": "15px",
+          "rowPadding": "0.8em",
           "rowSeparatorColor": "black",
           "rowTextAlign": "center",
           "rowTransition": "all 0.5s ease",
@@ -1751,6 +1218,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "caption": undefined,
           "children": Array [
             <Styled(HeadingSection)>
               <Styled(Component)
@@ -1771,68 +1239,28 @@ ShallowWrapper {
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Jason
-                       
-                    </span>
-                  }
+                  content="Jason"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Watson
-                       
-                    </span>
-                  }
+                  content="Watson"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Caspian
-                       
-                    </span>
-                  }
+                  content="Caspian"
                 />
-                 
               </Styled(Row)>
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Charles
-                       
-                    </span>
-                  }
+                  content="Charles"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Xavier
-                       
-                    </span>
-                  }
+                  content="Xavier"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      X-Men
-                       
-                    </span>
-                  }
+                  content="X-Men"
                 />
-                 
               </Styled(Row)>
             </RowSection>,
           ],
@@ -1912,68 +1340,28 @@ ShallowWrapper {
                 <Styled(Row)
                   onClick={[Function]}
                 >
-                   
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Jason
-                         
-                      </span>
-                    }
+                    content="Jason"
                   />
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Watson
-                         
-                      </span>
-                    }
+                    content="Watson"
                   />
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Caspian
-                         
-                      </span>
-                    }
+                    content="Caspian"
                   />
-                   
                 </Styled(Row)>,
                 <Styled(Row)
                   onClick={[Function]}
                 >
-                   
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Charles
-                         
-                      </span>
-                    }
+                    content="Charles"
                   />
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Xavier
-                         
-                      </span>
-                    }
+                    content="Xavier"
                   />
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        X-Men
-                         
-                      </span>
-                    }
+                    content="X-Men"
                   />
-                   
                 </Styled(Row)>,
               ],
             },
@@ -1985,53 +1373,26 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": Array [
-                    " ",
-                    Array [
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Jason
-                             
-                          </span>
-                        }
-                      />,
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Watson
-                             
-                          </span>
-                        }
-                      />,
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Caspian
-                             
-                          </span>
-                        }
-                      />,
-                    ],
-                    " ",
+                    <Styled(Component)
+                      content="Jason"
+                    />,
+                    <Styled(Component)
+                      content="Watson"
+                    />,
+                    <Styled(Component)
+                      content="Caspian"
+                    />,
                   ],
                   "onClick": [Function],
                 },
                 "ref": null,
                 "rendered": Array [
-                  " ",
                   Object {
                     "instance": null,
                     "key": "0",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Jason
-                         
-                      </span>,
+                      "content": "Jason",
                     },
                     "ref": null,
                     "rendered": null,
@@ -2042,11 +1403,7 @@ ShallowWrapper {
                     "key": "1",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Watson
-                         
-                      </span>,
+                      "content": "Watson",
                     },
                     "ref": null,
                     "rendered": null,
@@ -2057,17 +1414,12 @@ ShallowWrapper {
                     "key": "2",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Caspian
-                         
-                      </span>,
+                      "content": "Caspian",
                     },
                     "ref": null,
                     "rendered": null,
                     "type": [Function],
                   },
-                  " ",
                 ],
                 "type": [Function],
               },
@@ -2077,53 +1429,26 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": Array [
-                    " ",
-                    Array [
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Charles
-                             
-                          </span>
-                        }
-                      />,
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Xavier
-                             
-                          </span>
-                        }
-                      />,
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            X-Men
-                             
-                          </span>
-                        }
-                      />,
-                    ],
-                    " ",
+                    <Styled(Component)
+                      content="Charles"
+                    />,
+                    <Styled(Component)
+                      content="Xavier"
+                    />,
+                    <Styled(Component)
+                      content="X-Men"
+                    />,
                   ],
                   "onClick": [Function],
                 },
                 "ref": null,
                 "rendered": Array [
-                  " ",
                   Object {
                     "instance": null,
                     "key": "0",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Charles
-                         
-                      </span>,
+                      "content": "Charles",
                     },
                     "ref": null,
                     "rendered": null,
@@ -2134,11 +1459,7 @@ ShallowWrapper {
                     "key": "1",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Xavier
-                         
-                      </span>,
+                      "content": "Xavier",
                     },
                     "ref": null,
                     "rendered": null,
@@ -2149,17 +1470,12 @@ ShallowWrapper {
                     "key": "2",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        X-Men
-                         
-                      </span>,
+                      "content": "X-Men",
                     },
                     "ref": null,
                     "rendered": null,
                     "type": [Function],
                   },
-                  " ",
                 ],
                 "type": [Function],
               },
@@ -2250,19 +1566,21 @@ ShallowWrapper {
       Object {
         "cellBgColor": undefined,
         "cellFontColor": "#4a4a4a",
-        "cellFontSize": "12px",
-        "headingBgColor": " #f7f7f7",
+        "cellFontSize": "0.8em",
+        "headingBgColor": "#f7f7f7",
         "headingBorder": "1px solid #e6e6e6",
         "headingCursor": "pointer",
         "headingFontColor": "#4a4a4a",
-        "headingFontFamily": "News Cycle",
-        "headingFontSize": "14px",
-        "headingPadding": "15px",
+        "headingFontFamily": "Montserrat",
+        "headingFontSize": "0.9em",
+        "headingFontWeight": "normal",
+        "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
         "rowAltBgColor": "red",
-        "rowBgColor": undefined,
+        "rowBgColor": "white",
+        "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
-        "rowPadding": "15px",
+        "rowPadding": "0.8em",
         "rowSeparatorColor": "1px solid #e6e6e6",
         "rowTextAlign": "center",
         "rowTransition": "all 0.5s ease",
@@ -2282,6 +1600,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <Styled(Table)
+        caption={undefined}
         className={undefined}
       >
         <Styled(HeadingSection)>
@@ -2303,87 +1622,49 @@ ShallowWrapper {
           <Styled(Row)
             onClick={[Function]}
           >
-             
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Jason
-                   
-                </span>
-              }
+              content="Jason"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Watson
-                   
-                </span>
-              }
+              content="Watson"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Caspian
-                   
-                </span>
-              }
+              content="Caspian"
             />
-             
           </Styled(Row)>
           <Styled(Row)
             onClick={[Function]}
           >
-             
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Charles
-                   
-                </span>
-              }
+              content="Charles"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  Xavier
-                   
-                </span>
-              }
+              content="Xavier"
             />
             <Styled(Component)
-              content={
-                <span>
-                   
-                  X-Men
-                   
-                </span>
-              }
+              content="X-Men"
             />
-             
           </Styled(Row)>
         </RowSection>
       </Styled(Table)>,
       "theme": Object {
         "cellBgColor": undefined,
         "cellFontColor": "#4a4a4a",
-        "cellFontSize": "12px",
-        "headingBgColor": " #f7f7f7",
+        "cellFontSize": "0.8em",
+        "headingBgColor": "#f7f7f7",
         "headingBorder": "1px solid #e6e6e6",
         "headingCursor": "pointer",
         "headingFontColor": "#4a4a4a",
-        "headingFontFamily": "News Cycle",
-        "headingFontSize": "14px",
-        "headingPadding": "15px",
+        "headingFontFamily": "Montserrat",
+        "headingFontSize": "0.9em",
+        "headingFontWeight": "normal",
+        "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
         "rowAltBgColor": "red",
-        "rowBgColor": undefined,
+        "rowBgColor": "white",
+        "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
-        "rowPadding": "15px",
+        "rowPadding": "0.8em",
         "rowSeparatorColor": "1px solid #e6e6e6",
         "rowTextAlign": "center",
         "rowTransition": "all 0.5s ease",
@@ -2395,6 +1676,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
+        "caption": undefined,
         "children": Array [
           <Styled(HeadingSection)>
             <Styled(Component)
@@ -2415,68 +1697,28 @@ ShallowWrapper {
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Jason
-                     
-                  </span>
-                }
+                content="Jason"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Watson
-                     
-                  </span>
-                }
+                content="Watson"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Caspian
-                     
-                  </span>
-                }
+                content="Caspian"
               />
-               
             </Styled(Row)>
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Charles
-                     
-                  </span>
-                }
+                content="Charles"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Xavier
-                     
-                  </span>
-                }
+                content="Xavier"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    X-Men
-                     
-                  </span>
-                }
+                content="X-Men"
               />
-               
             </Styled(Row)>
           </RowSection>,
         ],
@@ -2556,68 +1798,28 @@ ShallowWrapper {
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Jason
-                       
-                    </span>
-                  }
+                  content="Jason"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Watson
-                       
-                    </span>
-                  }
+                  content="Watson"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Caspian
-                       
-                    </span>
-                  }
+                  content="Caspian"
                 />
-                 
               </Styled(Row)>,
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Charles
-                       
-                    </span>
-                  }
+                  content="Charles"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Xavier
-                       
-                    </span>
-                  }
+                  content="Xavier"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      X-Men
-                       
-                    </span>
-                  }
+                  content="X-Men"
                 />
-                 
               </Styled(Row)>,
             ],
           },
@@ -2629,53 +1831,26 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  " ",
-                  Array [
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Jason
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Watson
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Caspian
-                           
-                        </span>
-                      }
-                    />,
-                  ],
-                  " ",
+                  <Styled(Component)
+                    content="Jason"
+                  />,
+                  <Styled(Component)
+                    content="Watson"
+                  />,
+                  <Styled(Component)
+                    content="Caspian"
+                  />,
                 ],
                 "onClick": [Function],
               },
               "ref": null,
               "rendered": Array [
-                " ",
                 Object {
                   "instance": null,
                   "key": "0",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Jason
-                       
-                    </span>,
+                    "content": "Jason",
                   },
                   "ref": null,
                   "rendered": null,
@@ -2686,11 +1861,7 @@ ShallowWrapper {
                   "key": "1",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Watson
-                       
-                    </span>,
+                    "content": "Watson",
                   },
                   "ref": null,
                   "rendered": null,
@@ -2701,17 +1872,12 @@ ShallowWrapper {
                   "key": "2",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Caspian
-                       
-                    </span>,
+                    "content": "Caspian",
                   },
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
                 },
-                " ",
               ],
               "type": [Function],
             },
@@ -2721,53 +1887,26 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  " ",
-                  Array [
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Charles
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          Xavier
-                           
-                        </span>
-                      }
-                    />,
-                    <Styled(Component)
-                      content={
-                        <span>
-                           
-                          X-Men
-                           
-                        </span>
-                      }
-                    />,
-                  ],
-                  " ",
+                  <Styled(Component)
+                    content="Charles"
+                  />,
+                  <Styled(Component)
+                    content="Xavier"
+                  />,
+                  <Styled(Component)
+                    content="X-Men"
+                  />,
                 ],
                 "onClick": [Function],
               },
               "ref": null,
               "rendered": Array [
-                " ",
                 Object {
                   "instance": null,
                   "key": "0",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Charles
-                       
-                    </span>,
+                    "content": "Charles",
                   },
                   "ref": null,
                   "rendered": null,
@@ -2778,11 +1917,7 @@ ShallowWrapper {
                   "key": "1",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      Xavier
-                       
-                    </span>,
+                    "content": "Xavier",
                   },
                   "ref": null,
                   "rendered": null,
@@ -2793,17 +1928,12 @@ ShallowWrapper {
                   "key": "2",
                   "nodeType": "class",
                   "props": Object {
-                    "content": <span>
-                       
-                      X-Men
-                       
-                    </span>,
+                    "content": "X-Men",
                   },
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
                 },
-                " ",
               ],
               "type": [Function],
             },
@@ -2822,6 +1952,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <Styled(Table)
+          caption={undefined}
           className={undefined}
         >
           <Styled(HeadingSection)>
@@ -2843,87 +1974,49 @@ ShallowWrapper {
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Jason
-                     
-                  </span>
-                }
+                content="Jason"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Watson
-                     
-                  </span>
-                }
+                content="Watson"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Caspian
-                     
-                  </span>
-                }
+                content="Caspian"
               />
-               
             </Styled(Row)>
             <Styled(Row)
               onClick={[Function]}
             >
-               
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Charles
-                     
-                  </span>
-                }
+                content="Charles"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    Xavier
-                     
-                  </span>
-                }
+                content="Xavier"
               />
               <Styled(Component)
-                content={
-                  <span>
-                     
-                    X-Men
-                     
-                  </span>
-                }
+                content="X-Men"
               />
-               
             </Styled(Row)>
           </RowSection>
         </Styled(Table)>,
         "theme": Object {
           "cellBgColor": undefined,
           "cellFontColor": "#4a4a4a",
-          "cellFontSize": "12px",
-          "headingBgColor": " #f7f7f7",
+          "cellFontSize": "0.8em",
+          "headingBgColor": "#f7f7f7",
           "headingBorder": "1px solid #e6e6e6",
           "headingCursor": "pointer",
           "headingFontColor": "#4a4a4a",
-          "headingFontFamily": "News Cycle",
-          "headingFontSize": "14px",
-          "headingPadding": "15px",
+          "headingFontFamily": "Montserrat",
+          "headingFontSize": "0.9em",
+          "headingFontWeight": "normal",
+          "headingPadding": "0.8em",
           "headingTextTransform": "uppercase",
           "rowAltBgColor": "red",
-          "rowBgColor": undefined,
+          "rowBgColor": "white",
+          "rowFontFamily": "Lato",
           "rowHoverColor": "#f5f8fc",
-          "rowPadding": "15px",
+          "rowPadding": "0.8em",
           "rowSeparatorColor": "1px solid #e6e6e6",
           "rowTextAlign": "center",
           "rowTransition": "all 0.5s ease",
@@ -2935,6 +2028,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "caption": undefined,
           "children": Array [
             <Styled(HeadingSection)>
               <Styled(Component)
@@ -2955,68 +2049,28 @@ ShallowWrapper {
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Jason
-                       
-                    </span>
-                  }
+                  content="Jason"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Watson
-                       
-                    </span>
-                  }
+                  content="Watson"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Caspian
-                       
-                    </span>
-                  }
+                  content="Caspian"
                 />
-                 
               </Styled(Row)>
               <Styled(Row)
                 onClick={[Function]}
               >
-                 
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Charles
-                       
-                    </span>
-                  }
+                  content="Charles"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      Xavier
-                       
-                    </span>
-                  }
+                  content="Xavier"
                 />
                 <Styled(Component)
-                  content={
-                    <span>
-                       
-                      X-Men
-                       
-                    </span>
-                  }
+                  content="X-Men"
                 />
-                 
               </Styled(Row)>
             </RowSection>,
           ],
@@ -3096,68 +2150,28 @@ ShallowWrapper {
                 <Styled(Row)
                   onClick={[Function]}
                 >
-                   
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Jason
-                         
-                      </span>
-                    }
+                    content="Jason"
                   />
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Watson
-                         
-                      </span>
-                    }
+                    content="Watson"
                   />
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Caspian
-                         
-                      </span>
-                    }
+                    content="Caspian"
                   />
-                   
                 </Styled(Row)>,
                 <Styled(Row)
                   onClick={[Function]}
                 >
-                   
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Charles
-                         
-                      </span>
-                    }
+                    content="Charles"
                   />
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        Xavier
-                         
-                      </span>
-                    }
+                    content="Xavier"
                   />
                   <Styled(Component)
-                    content={
-                      <span>
-                         
-                        X-Men
-                         
-                      </span>
-                    }
+                    content="X-Men"
                   />
-                   
                 </Styled(Row)>,
               ],
             },
@@ -3169,53 +2183,26 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": Array [
-                    " ",
-                    Array [
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Jason
-                             
-                          </span>
-                        }
-                      />,
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Watson
-                             
-                          </span>
-                        }
-                      />,
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Caspian
-                             
-                          </span>
-                        }
-                      />,
-                    ],
-                    " ",
+                    <Styled(Component)
+                      content="Jason"
+                    />,
+                    <Styled(Component)
+                      content="Watson"
+                    />,
+                    <Styled(Component)
+                      content="Caspian"
+                    />,
                   ],
                   "onClick": [Function],
                 },
                 "ref": null,
                 "rendered": Array [
-                  " ",
                   Object {
                     "instance": null,
                     "key": "0",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Jason
-                         
-                      </span>,
+                      "content": "Jason",
                     },
                     "ref": null,
                     "rendered": null,
@@ -3226,11 +2213,7 @@ ShallowWrapper {
                     "key": "1",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Watson
-                         
-                      </span>,
+                      "content": "Watson",
                     },
                     "ref": null,
                     "rendered": null,
@@ -3241,17 +2224,12 @@ ShallowWrapper {
                     "key": "2",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Caspian
-                         
-                      </span>,
+                      "content": "Caspian",
                     },
                     "ref": null,
                     "rendered": null,
                     "type": [Function],
                   },
-                  " ",
                 ],
                 "type": [Function],
               },
@@ -3261,53 +2239,26 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": Array [
-                    " ",
-                    Array [
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Charles
-                             
-                          </span>
-                        }
-                      />,
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            Xavier
-                             
-                          </span>
-                        }
-                      />,
-                      <Styled(Component)
-                        content={
-                          <span>
-                             
-                            X-Men
-                             
-                          </span>
-                        }
-                      />,
-                    ],
-                    " ",
+                    <Styled(Component)
+                      content="Charles"
+                    />,
+                    <Styled(Component)
+                      content="Xavier"
+                    />,
+                    <Styled(Component)
+                      content="X-Men"
+                    />,
                   ],
                   "onClick": [Function],
                 },
                 "ref": null,
                 "rendered": Array [
-                  " ",
                   Object {
                     "instance": null,
                     "key": "0",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Charles
-                         
-                      </span>,
+                      "content": "Charles",
                     },
                     "ref": null,
                     "rendered": null,
@@ -3318,11 +2269,7 @@ ShallowWrapper {
                     "key": "1",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        Xavier
-                         
-                      </span>,
+                      "content": "Xavier",
                     },
                     "ref": null,
                     "rendered": null,
@@ -3333,17 +2280,12 @@ ShallowWrapper {
                     "key": "2",
                     "nodeType": "class",
                     "props": Object {
-                      "content": <span>
-                         
-                        X-Men
-                         
-                      </span>,
+                      "content": "X-Men",
                     },
                     "ref": null,
                     "rendered": null,
                     "type": [Function],
                   },
-                  " ",
                 ],
                 "type": [Function],
               },
@@ -3367,496 +2309,341 @@ ShallowWrapper {
 `;
 
 exports[`table create normal JSX 1`] = `
-<div
+<table
   className="sc-ifAKCX dElilx"
 >
-   
-  <div
-    className="heading-section sc-bxivhb dxHksZ"
-  >
-     
-    <div
-      className="heading sc-htpNat ldqAdk"
-      onClick={[Function]}
+  <thead>
+    <tr
+      className="heading-section sc-bxivhb dxHksZ"
     >
-      Heading 1
-    </div>
-     
-  </div>
-  <div
-    className="row-section "
-  >
-     
-    <div
-      className="row sc-bwzfXH MtEGZ"
-      onClick={[Function]}
-    >
-       
-      <div
-        className="cell sc-bdVaJa hkgyrY"
+      <th
+        className="heading sc-htpNat evIAQd"
+        onClick={[Function]}
+        scope="col"
       >
-         
+        Heading 1
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="row-section"
+  >
+    <tr
+      className="row sc-bwzfXH hTQFzO"
+      onClick={[Function]}
+    >
+      <td
+        className="cell sc-bdVaJa hkgyrY"
+        style={Object {}}
+      >
         Cell 1
-         
-      </div>
-      <div
+      </td>
+      <td
         className="cell sc-bdVaJa hkgyrY"
+        style={Object {}}
       >
-         
         Cell 2
-         
-      </div>
-      <div
+      </td>
+      <td
         className="cell sc-bdVaJa hkgyrY"
+        style="background:red"
       >
-         
-        <div
-          style={
-            Object {
-              "background": "red",
-            }
-          }
-        >
-          Cell 3
-        </div>
-         
-      </div>
-       
-    </div>
-     
-  </div>
-   
-</div>
+        Cell 3
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`table create theme provided JSX 1`] = `
-<div
+<table
   className="sc-ifAKCX dElilx"
 >
-   
-  <div
-    className="heading-section sc-bxivhb lgUqnC"
-  >
-     
-    <div
-      className="heading sc-htpNat ldqAdk"
-      onClick={[Function]}
+  <thead>
+    <tr
+      className="heading-section sc-bxivhb lgUqnC"
     >
-      Heading 1
-    </div>
-     
-  </div>
-  <div
-    className="row-section "
-  >
-     
-    <div
-      className="row sc-bwzfXH byTBti"
-      onClick={[Function]}
-    >
-       
-      <div
-        className="cell sc-bdVaJa kAfbPS"
+      <th
+        className="heading sc-htpNat evIAQd"
+        onClick={[Function]}
+        scope="col"
       >
-         
+        Heading 1
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="row-section"
+  >
+    <tr
+      className="row sc-bwzfXH dCFFMJ"
+      onClick={[Function]}
+    >
+      <td
+        className="cell sc-bdVaJa kAfbPS"
+        style={Object {}}
+      >
         Cell 1
-         
-      </div>
-      <div
+      </td>
+      <td
         className="cell sc-bdVaJa kAfbPS"
+        style={Object {}}
       >
-         
         Cell 2
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kAfbPS"
-      >
-         
-        <div
-          style={
-            Object {
-              "background": "red",
-            }
-          }
-        >
-          Cell 3
-        </div>
-         
-      </div>
-       
-    </div>
-     
-  </div>
-   
-</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`table should contain data passed to it  1`] = `
-<div
+<table
   className="sc-ifAKCX dElilx"
 >
-   
-  <div
-    className="heading-section sc-bxivhb eQcfwf"
+  <thead>
+    <tr
+      className="heading-section sc-bxivhb npvRQ"
+    >
+      <th
+        className="heading sc-htpNat lkWemV"
+        onClick={[Function]}
+        scope="col"
+      >
+        First
+      </th>
+      <th
+        className="heading sc-htpNat lkWemV"
+        onClick={[Function]}
+        scope="col"
+      >
+        Last
+      </th>
+      <th
+        className="heading sc-htpNat lkWemV"
+        onClick={[Function]}
+        scope="col"
+      >
+        Company
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="row-section"
   >
-     
-    <div
-      className="heading sc-htpNat ldqAdk"
+    <tr
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
-      First
-    </div>
-    <div
-      className="heading sc-htpNat ldqAdk"
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
+      >
+        Jason
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
+      >
+        Watson
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
+      >
+        Caspian
+      </td>
+    </tr>
+    <tr
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
-      Last
-    </div>
-    <div
-      className="heading sc-htpNat ldqAdk"
-      onClick={[Function]}
-    >
-      Company
-    </div>
-     
-  </div>
-  <div
-    className="row-section "
-  >
-     
-    <div
-      className="row sc-bwzfXH bgwvXw"
-      onClick={[Function]}
-    >
-       
-       
-      <div
-        className="cell sc-bdVaJa kZMAGP"
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
       >
-         
-        <span>
-           
-          Jason
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
+        Charles
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
       >
-         
-        <span>
-           
-          Watson
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
+        Xavier
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
       >
-         
-        <span>
-           
-          Caspian
-           
-        </span>
-         
-      </div>
-       
-       
-    </div>
-    <div
-      className="row sc-bwzfXH bgwvXw"
-      onClick={[Function]}
-    >
-       
-       
-      <div
-        className="cell sc-bdVaJa kZMAGP"
-      >
-         
-        <span>
-           
-          Charles
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
-      >
-         
-        <span>
-           
-          Xavier
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
-      >
-         
-        <span>
-           
-          X-Men
-           
-        </span>
-         
-      </div>
-       
-       
-    </div>
-     
-  </div>
-   
-</div>
+        X-Men
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`table should render without a theme 1`] = `
-<div
+<table
   className="sc-ifAKCX dElilx"
 >
-   
-  <div
-    className="heading-section sc-bxivhb eQcfwf"
+  <thead>
+    <tr
+      className="heading-section sc-bxivhb npvRQ"
+    >
+      <th
+        className="heading sc-htpNat lkWemV"
+        onClick={[Function]}
+        scope="col"
+      >
+        First
+      </th>
+      <th
+        className="heading sc-htpNat lkWemV"
+        onClick={[Function]}
+        scope="col"
+      >
+        Last
+      </th>
+      <th
+        className="heading sc-htpNat lkWemV"
+        onClick={[Function]}
+        scope="col"
+      >
+        Company
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="row-section"
   >
-     
-    <div
-      className="heading sc-htpNat ldqAdk"
+    <tr
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
-      First
-    </div>
-    <div
-      className="heading sc-htpNat ldqAdk"
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
+      >
+        Charles
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
+      >
+        Xavier
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
+      >
+        X-Men
+      </td>
+    </tr>
+    <tr
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
-      Last
-    </div>
-    <div
-      className="heading sc-htpNat ldqAdk"
-      onClick={[Function]}
-    >
-      Company
-    </div>
-     
-  </div>
-  <div
-    className="row-section "
-  >
-     
-    <div
-      className="row sc-bwzfXH bgwvXw"
-      onClick={[Function]}
-    >
-       
-       
-      <div
-        className="cell sc-bdVaJa kZMAGP"
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
       >
-         
-        <span>
-           
-          Charles
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
+        Jason
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
       >
-         
-        <span>
-           
-          Xavier
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
+        Watson
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
       >
-         
-        <span>
-           
-          X-Men
-           
-        </span>
-         
-      </div>
-       
-       
-    </div>
-    <div
-      className="row sc-bwzfXH bgwvXw"
-      onClick={[Function]}
-    >
-       
-       
-      <div
-        className="cell sc-bdVaJa kZMAGP"
-      >
-         
-        <span>
-           
-          Jason
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
-      >
-         
-        <span>
-           
-          Watson
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
-      >
-         
-        <span>
-           
-          Caspian
-           
-        </span>
-         
-      </div>
-       
-       
-    </div>
-     
-  </div>
-   
-</div>
+        Caspian
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`table should sort DESC and ASC 1`] = `
-<div
+<table
   className="sc-ifAKCX dElilx"
 >
-   
-  <div
-    className="heading-section sc-bxivhb eQcfwf"
+  <thead>
+    <tr
+      className="heading-section sc-bxivhb npvRQ"
+    >
+      <th
+        className="heading sc-htpNat eewAVl"
+        onClick={[Function]}
+        scope="col"
+      >
+        First
+      </th>
+      <th
+        className="heading sc-htpNat lkWemV"
+        onClick={[Function]}
+        scope="col"
+      >
+        Last
+      </th>
+      <th
+        className="heading sc-htpNat lkWemV"
+        onClick={[Function]}
+        scope="col"
+      >
+        Company
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="row-section"
   >
-     
-    <div
-      className="heading sc-htpNat fXFvXl"
+    <tr
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
-      First
-    </div>
-    <div
-      className="heading sc-htpNat ldqAdk"
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
+      >
+        Charles
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
+      >
+        Xavier
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
+      >
+        X-Men
+      </td>
+    </tr>
+    <tr
+      className="row sc-bwzfXH mODdY"
       onClick={[Function]}
     >
-      Last
-    </div>
-    <div
-      className="heading sc-htpNat ldqAdk"
-      onClick={[Function]}
-    >
-      Company
-    </div>
-     
-  </div>
-  <div
-    className="row-section "
-  >
-     
-    <div
-      className="row sc-bwzfXH bgwvXw"
-      onClick={[Function]}
-    >
-       
-       
-      <div
-        className="cell sc-bdVaJa kZMAGP"
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
       >
-         
-        <span>
-           
-          Charles
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
+        Jason
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
       >
-         
-        <span>
-           
-          Xavier
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
+        Watson
+      </td>
+      <td
+        className="cell sc-bdVaJa ilUYd"
+        style={Object {}}
       >
-         
-        <span>
-           
-          X-Men
-           
-        </span>
-         
-      </div>
-       
-       
-    </div>
-    <div
-      className="row sc-bwzfXH bgwvXw"
-      onClick={[Function]}
-    >
-       
-       
-      <div
-        className="cell sc-bdVaJa kZMAGP"
-      >
-         
-        <span>
-           
-          Jason
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
-      >
-         
-        <span>
-           
-          Watson
-           
-        </span>
-         
-      </div>
-      <div
-        className="cell sc-bdVaJa kZMAGP"
-      >
-         
-        <span>
-           
-          Caspian
-           
-        </span>
-         
-      </div>
-       
-       
-    </div>
-     
-  </div>
-   
-</div>
+        Caspian
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;

@@ -31,7 +31,8 @@ interface HeadingsAndRows {
 }
 
 export interface TableProps<T> {
-    columns: Array<TableColumn<T>>;
+    caption?: string;
+    columns: TableColumn<T>[];
     data: T[];
     theme?: ThemeProps;
     defaultSort?: Sort;
@@ -45,9 +46,17 @@ export interface TableState {
     columnSortOrder: SortOrder;
 }
 
+/**
+ * Main table container component.
+ *
+ * @export
+ * @class TableContainer
+ * @extends {React.Component<TableProps<T>, TableState>}
+ * @template T
+ */
 export default class TableContainer<T> extends React.Component<TableProps<T>, TableState> {
 
-    public static defaultProps: TableProps<any> = {
+    public static defaultProps: TableProps<{}> = {
         theme: defaultTheme,
         columns: [],
         data: [],
@@ -59,10 +68,10 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         this.handleHeadingOnClick = this.handleHeadingOnClick.bind(this);
         this.handleRowOnClick = this.handleRowOnClick.bind(this);
 
-        let column;
-        let sortOrder = SortOrder.NONE;
+        let column: string | undefined;
+        let sortOrder: SortOrder = SortOrder.NONE;
 
-        if (this.props.defaultSort) {
+        if (this.props.defaultSort !== undefined) {
             column = this.props.defaultSort.column;
             sortOrder = this.props.defaultSort.sortOrder;
         }
@@ -71,17 +80,16 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
             columnSortName: column,
             columnSortOrder: sortOrder,
         };
-
     }
 
-    public render() {
+    public render(): JSX.Element {
 
-        const theme = { ...defaultTheme, ...this.props.theme };
+        const theme: ThemeProps = { ...defaultTheme, ...this.props.theme };
 
         const { headings, rows } = this.mapColumnsToRows();
 
-        const tyble =
-            <Table className={this.props.className}>
+        const tyble: JSX.Element =
+            <Table className={this.props.className} caption={this.props.caption}>
                 <HeadingSection>
                     {this.getHeadings(headings)}
                 </HeadingSection>
@@ -90,7 +98,7 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
                 </RowSection>
             </Table>;
 
-        if (this.props.className) {
+        if (this.props.className !== undefined) {
             return tyble;
         } else {
             return (
@@ -99,27 +107,26 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
                 </ThemeProvider>
             );
         }
-
     }
 
-    private getHeadings(headings: any): JSX.Element[] {
+    private getHeadings(headings: HeadingProps[]): JSX.Element[] {
         return headings.map((headingProps: HeadingProps, index: number) => {
             return <Heading key={index} {...headingProps} />;
         });
     }
 
-    private getRows(rows: any): JSX.Element {
+    private getRows(rows: OrderedRowProps[]): JSX.Element[] {
 
         return rows.map((row: OrderedRowProps, rowIndex: number) => {
             const tableCellProps: TableCell[] = row.cells;
-            const cells: any[] = [];
+            const cells: {}[] = [];
 
             tableCellProps.map((cellProps: CellProps, cellIndex: number) => {
-                const cell = <Cell key={cellIndex} {...cellProps} />;
+                const cell: JSX.Element = <Cell key={cellIndex} {...cellProps} />;
                 cells.push(cell);
             });
 
-            return <Row key={rowIndex} onClick={this.handleRowOnClick}> {cells} </Row>;
+            return <Row key={rowIndex} onClick={this.handleRowOnClick}>{cells}</Row>;
         });
     }
 
@@ -136,7 +143,7 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
                 onClick: this.handleHeadingOnClick,
             };
 
-            if (column.sort && column.heading.content === this.state.columnSortName) {
+            if (column.sort !== undefined && column.heading.content === this.state.columnSortName) {
                 headingProps.showDescSortingIcon = this.state.columnSortOrder === SortOrder.DESC;
             }
 
@@ -144,22 +151,21 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
             let dataProps: T[] = this.props.data;
 
-            if (column.sort && this.state.columnSortName === column.heading.content) {
+            if (column.sort !== undefined && this.state.columnSortName === column.heading.content) {
                 dataProps = column.sort(this.props.data, this.state.columnSortOrder);
             }
 
             dataProps.map((cellData: T, index: number) => {
-                if (column.cells) {
+                if (column.cells !== undefined) {
 
                     let row: OrderedRowProps = rows.filter((r: OrderedRowProps) => r.index === index)[0];
                     const cell: TableCell = { content: column.cells(cellData) };
 
-                    if (!row) {
-                        row = { index, cells: [cell] };
-
-                        headingsAndRows.rows.push(row);
-                    } else {
+                    if (row !== undefined) {
                         row.cells.push(cell);
+                    } else {
+                        row = { index, cells: [cell] };
+                        headingsAndRows.rows.push(row);
                     }
                 }
             });
@@ -168,26 +174,27 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         return headingsAndRows;
     }
 
-    private handleHeadingOnClick(e: MouseEvent, headingClickProps: any) {
+    private handleHeadingOnClick(e: MouseEvent, headingClickProps: { content?: string, isSortingEnabled: boolean }): void {
+
         if (headingClickProps.isSortingEnabled) {
             const { columnSortOrder } = this.state;
 
-            const sortToggle = columnSortOrder === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC;
+            const sortToggle: SortOrder = columnSortOrder === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC;
 
             this.setState({
                 columnSortName: headingClickProps.content,
                 columnSortOrder: sortToggle,
             });
 
-            if (this.props.onHeadingClick) {
+            if (this.props.onHeadingClick !== undefined) {
                 this.props.onHeadingClick(e);
             }
         }
     }
 
-    private handleRowOnClick(e: MouseEvent) {
+    private handleRowOnClick(e: MouseEvent): void {
 
-        if (this.props.onRowClick) {
+        if (this.props.onRowClick !== undefined) {
             this.props.onRowClick(e);
         }
     }

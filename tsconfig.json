@@ -12,6 +12,7 @@
         "jsx": "react",
         "moduleResolution": "node",
         "strict": true,
+        "strictFunctionTypes": false,
         "baseUrl": ".",
         "lib": [
             "es5",

@@ -9,10 +9,11 @@ const getIconSymbol = (props: HeadingProps): string => {
 const HeadingStyled: StyledComponentClass<HeadingProps, React.StatelessComponent<HeadingProps>> = styled(Heading) `
   display: flex;
   width: 100%;
+  font-weight: ${ props => props.theme.headingFontWeight };
 
   &::before {
     padding-right: ${ props => props.showDescSortingIcon !== undefined ? '6px' : '0px'};
-    content: '${ props => getIconSymbol(props)}';
+    content: '${getIconSymbol}';
   }
 `;
 
