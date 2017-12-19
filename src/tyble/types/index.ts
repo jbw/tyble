@@ -42,7 +42,7 @@ export const defaultTheme: ThemeProps = {
 
     rowSeparatorColor: '1px solid #e6e6e6',
     rowBgColor: 'white',
-    rowAltBgColor: 'red',
+    rowAltBgColor: undefined,
     rowFontFamily: 'Lato',
     rowHoverColor: '#f5f8fc',
     rowPadding: '0.8em',
