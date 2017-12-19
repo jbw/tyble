@@ -126,7 +126,7 @@ ShallowWrapper {
         "headingFontWeight": "normal",
         "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
-        "rowAltBgColor": "red",
+        "rowAltBgColor": undefined,
         "rowBgColor": "white",
         "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
@@ -850,7 +850,7 @@ ShallowWrapper {
         "headingFontWeight": "normal",
         "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
-        "rowAltBgColor": "red",
+        "rowAltBgColor": undefined,
         "rowBgColor": "white",
         "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
@@ -1202,7 +1202,7 @@ ShallowWrapper {
           "headingFontWeight": "normal",
           "headingPadding": "0.8em",
           "headingTextTransform": "uppercase",
-          "rowAltBgColor": "red",
+          "rowAltBgColor": undefined,
           "rowBgColor": "white",
           "rowFontFamily": "Lato",
           "rowHoverColor": "#f5f8fc",
@@ -1576,7 +1576,7 @@ ShallowWrapper {
         "headingFontWeight": "normal",
         "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
-        "rowAltBgColor": "red",
+        "rowAltBgColor": undefined,
         "rowBgColor": "white",
         "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
@@ -1660,7 +1660,7 @@ ShallowWrapper {
         "headingFontWeight": "normal",
         "headingPadding": "0.8em",
         "headingTextTransform": "uppercase",
-        "rowAltBgColor": "red",
+        "rowAltBgColor": undefined,
         "rowBgColor": "white",
         "rowFontFamily": "Lato",
         "rowHoverColor": "#f5f8fc",
@@ -2012,7 +2012,7 @@ ShallowWrapper {
           "headingFontWeight": "normal",
           "headingPadding": "0.8em",
           "headingTextTransform": "uppercase",
-          "rowAltBgColor": "red",
+          "rowAltBgColor": undefined,
           "rowBgColor": "white",
           "rowFontFamily": "Lato",
           "rowHoverColor": "#f5f8fc",
@@ -2402,7 +2402,7 @@ exports[`table should contain data passed to it  1`] = `
 >
   <thead>
     <tr
-      className="heading-section sc-bxivhb npvRQ"
+      className="heading-section sc-bxivhb gIYmSO"
     >
       <th
         className="heading sc-htpNat lkWemV"
@@ -2486,7 +2486,7 @@ exports[`table should render without a theme 1`] = `
 >
   <thead>
     <tr
-      className="heading-section sc-bxivhb npvRQ"
+      className="heading-section sc-bxivhb gIYmSO"
     >
       <th
         className="heading sc-htpNat lkWemV"
@@ -2570,7 +2570,7 @@ exports[`table should sort DESC and ASC 1`] = `
 >
   <thead>
     <tr
-      className="heading-section sc-bxivhb npvRQ"
+      className="heading-section sc-bxivhb gIYmSO"
     >
       <th
         className="heading sc-htpNat eewAVl"
