@@ -53,6 +53,10 @@ export const defaultTheme: ThemeProps = {
     cellFontColor: '#4a4a4a',
     cellBgColor: undefined,
 
+    captionBgColor: undefined,
+    captionFontColor: undefined,
+    captionPadding:  '.8em .8em'
+
 };
 
 export interface ThemeProps {
@@ -79,6 +83,10 @@ export interface ThemeProps {
     cellFontSize?: string;
     cellFontColor?: string;
     cellBgColor?: string;
+
+    captionFontColor?: string;
+    captionBgColor?: string;
+    captionPadding?: string;
 }
 
 export interface Style {

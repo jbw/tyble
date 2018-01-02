@@ -11,6 +11,7 @@ Tyble
 [![Develop Status](https://travis-ci.org/jbw/tyble.svg?branch=develop)](https://travis-ci.org/jbw/tyble)
 </h2>
 
+
 ## Table of Contents
 
 - [Features](#features)
@@ -33,6 +34,8 @@ Tyble
 - Column sorting and custom sorting functionality provided
 
 ## Installation
+
+[![npm version](https://badge.fury.io/js/tyble.svg)](https://badge.fury.io/js/tyble)
 
 ###  Yarn
 
@@ -155,6 +158,9 @@ Here are all the props and defaults for the `ThemeProps` object. Creating your o
 | cellFontSize         | 12px              |
 | cellFontColor        | #4a4a4a           |
 | cellBgColor          | `none`            |
+| captionBgColor       | `undefined`       |
+| captionFontColor     | `undefined`       |
+| captionPadding       | .8em .8em         |
 
 ## Types
 

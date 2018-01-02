@@ -1,14 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
-
 import { shallow, configure } from 'enzyme';
-
 import * as Adapter from 'enzyme-adapter-react-16';
-
 configure({ adapter: new Adapter() });
-
 import * as renderer from 'react-test-renderer';
+import './theme.scss';
 
 import Tyble, {
     CellStyled as Cell,
@@ -23,8 +20,6 @@ import Tyble, {
     MouseEvent
 
 } from '../src/tyble';
-
-import './theme.scss';
 
 interface Person {
     name: string;
@@ -101,17 +96,6 @@ const theme: ThemeProps = {
     cellBgColor: 'purple',
 
 };
-
-import * as axe from 'axe-core';
-
-describe('Module', () => {
-    it('should have no accessibility violations', () => {
-        const component = renderer.create(<Tyble data={data} columns={columns} />);
-        axe.a11yCheck(component, {}, (results: axe.AxeResults) => {
-            expect(results.violations.length).toBe(1);
-        });
-    });
-});
 
 describe('table', () => {
     it('should contain data passed to it ', () => {
