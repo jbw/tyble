@@ -21,7 +21,7 @@ import Tyble, {
     TableColumn,
     SortOrder
 
-} from '../src/tyble';
+} from 'tyble';
 
 import { Person, Skill, Company } from './types';
 
