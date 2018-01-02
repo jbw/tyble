@@ -2,7 +2,7 @@
 
 exports[`table create JSX component with SASS styling 1`] = `
 <table
-  className="tyble sc-ifAKCX dElilx"
+  className="tyble sc-ifAKCX BwTsJ"
 >
   <thead>
     <tr
@@ -114,6 +114,9 @@ ShallowWrapper {
     }
     theme={
       Object {
+        "captionBgColor": undefined,
+        "captionFontColor": undefined,
+        "captionPadding": ".8em .8em",
         "cellBgColor": undefined,
         "cellFontColor": "#4a4a4a",
         "cellFontSize": "0.8em",
@@ -838,6 +841,9 @@ ShallowWrapper {
         </RowSection>
       </Styled(Table)>,
       "theme": Object {
+        "captionBgColor": undefined,
+        "captionFontColor": undefined,
+        "captionPadding": ".8em .8em",
         "cellBgColor": "purple",
         "cellFontColor": "orange",
         "cellFontSize": "14px",
@@ -1190,6 +1196,9 @@ ShallowWrapper {
           </RowSection>
         </Styled(Table)>,
         "theme": Object {
+          "captionBgColor": undefined,
+          "captionFontColor": undefined,
+          "captionPadding": ".8em .8em",
           "cellBgColor": "purple",
           "cellFontColor": "orange",
           "cellFontSize": "14px",
@@ -1564,6 +1573,9 @@ ShallowWrapper {
     }
     theme={
       Object {
+        "captionBgColor": undefined,
+        "captionFontColor": undefined,
+        "captionPadding": ".8em .8em",
         "cellBgColor": undefined,
         "cellFontColor": "#4a4a4a",
         "cellFontSize": "0.8em",
@@ -1648,6 +1660,9 @@ ShallowWrapper {
         </RowSection>
       </Styled(Table)>,
       "theme": Object {
+        "captionBgColor": undefined,
+        "captionFontColor": undefined,
+        "captionPadding": ".8em .8em",
         "cellBgColor": undefined,
         "cellFontColor": "#4a4a4a",
         "cellFontSize": "0.8em",
@@ -2000,6 +2015,9 @@ ShallowWrapper {
           </RowSection>
         </Styled(Table)>,
         "theme": Object {
+          "captionBgColor": undefined,
+          "captionFontColor": undefined,
+          "captionPadding": ".8em .8em",
           "cellBgColor": undefined,
           "cellFontColor": "#4a4a4a",
           "cellFontSize": "0.8em",
@@ -2310,7 +2328,7 @@ ShallowWrapper {
 
 exports[`table create normal JSX 1`] = `
 <table
-  className="sc-ifAKCX dElilx"
+  className="sc-ifAKCX BwTsJ"
 >
   <thead>
     <tr
@@ -2357,7 +2375,7 @@ exports[`table create normal JSX 1`] = `
 
 exports[`table create theme provided JSX 1`] = `
 <table
-  className="sc-ifAKCX dElilx"
+  className="sc-ifAKCX BwTsJ"
 >
   <thead>
     <tr
@@ -2398,7 +2416,7 @@ exports[`table create theme provided JSX 1`] = `
 
 exports[`table should contain data passed to it  1`] = `
 <table
-  className="sc-ifAKCX dElilx"
+  className="sc-ifAKCX eBVlrO"
 >
   <thead>
     <tr
@@ -2482,7 +2500,7 @@ exports[`table should contain data passed to it  1`] = `
 
 exports[`table should render without a theme 1`] = `
 <table
-  className="sc-ifAKCX dElilx"
+  className="sc-ifAKCX eBVlrO"
 >
   <thead>
     <tr
@@ -2566,7 +2584,7 @@ exports[`table should render without a theme 1`] = `
 
 exports[`table should sort DESC and ASC 1`] = `
 <table
-  className="sc-ifAKCX dElilx"
+  className="sc-ifAKCX eBVlrO"
 >
   <thead>
     <tr
