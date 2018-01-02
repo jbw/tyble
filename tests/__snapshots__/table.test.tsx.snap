@@ -2,7 +2,7 @@
 
 exports[`table create JSX component with SASS styling 1`] = `
 <table
-  className="tyble sc-ifAKCX BwTsJ"
+  className="tyble sc-ifAKCX vTdhl"
 >
   <thead>
     <tr
@@ -2328,7 +2328,7 @@ ShallowWrapper {
 
 exports[`table create normal JSX 1`] = `
 <table
-  className="sc-ifAKCX BwTsJ"
+  className="sc-ifAKCX vTdhl"
 >
   <thead>
     <tr
@@ -2375,7 +2375,7 @@ exports[`table create normal JSX 1`] = `
 
 exports[`table create theme provided JSX 1`] = `
 <table
-  className="sc-ifAKCX BwTsJ"
+  className="sc-ifAKCX vTdhl"
 >
   <thead>
     <tr
@@ -2416,7 +2416,7 @@ exports[`table create theme provided JSX 1`] = `
 
 exports[`table should contain data passed to it  1`] = `
 <table
-  className="sc-ifAKCX eBVlrO"
+  className="sc-ifAKCX ergkHe"
 >
   <thead>
     <tr
@@ -2500,7 +2500,7 @@ exports[`table should contain data passed to it  1`] = `
 
 exports[`table should render without a theme 1`] = `
 <table
-  className="sc-ifAKCX eBVlrO"
+  className="sc-ifAKCX ergkHe"
 >
   <thead>
     <tr
@@ -2584,7 +2584,7 @@ exports[`table should render without a theme 1`] = `
 
 exports[`table should sort DESC and ASC 1`] = `
 <table
-  className="sc-ifAKCX eBVlrO"
+  className="sc-ifAKCX ergkHe"
 >
   <thead>
     <tr
