@@ -158,6 +158,9 @@ Here are all the props and defaults for the `ThemeProps` object. Creating your o
 | cellFontSize         | 12px              |
 | cellFontColor        | #4a4a4a           |
 | cellBgColor          | `none`            |
+| captionBgColor       | `undefined`       |
+| captionFontColor     | `undefined`       |
+| captionPadding       | .8em .8em         |
 
 ## Types
 
