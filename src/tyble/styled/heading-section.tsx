@@ -12,7 +12,7 @@ const HeadingWrapperStyled: HeadingWrapperStyledClass<HeadingSectionProps> = sty
   background: ${ props => props.theme.headingBgColor};
   font-size: ${ props => props.theme.headingFontSize};
   color: ${ props => props.theme.headingFontColor};
-  text-transform: ${ props => props.theme.textTransform};
+  text-transform: ${ props => props.theme.headingTextTransform};
   border-top: ${ props => props.theme.headingBorder};
 `;
 

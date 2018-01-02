@@ -1,4 +1,4 @@
-import styled, { StyledComponentClass } from 'styled-components';
+import styled, { StyledComponentClass} from 'styled-components';
 
 import Row, { RowProps } from '../presentation/row';
 
@@ -9,6 +9,7 @@ const RowStyled: StyledComponentClass<RowProps, React.StatelessComponent<RowProp
   padding: ${ props => props.theme.rowPadding };
   transition: ${ props => props.theme.rowTransition };
   background: ${ props => props.theme.rowBgColor};
+  font-family: ${ props => props.theme.rowFontFamily};
 
   &:hover {
     background: ${ props => props.theme.rowHoverColor };

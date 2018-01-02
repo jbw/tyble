@@ -1,7 +1,13 @@
-export type MouseEvent = React.MouseEvent<HTMLDivElement>;
+
+export type MouseEvent = React.MouseEvent<HTMLElement>;
 export type MouseClickFunc = (e: MouseEvent) => void;
-export type CellRender<T> = (props: T) => JSX.Element;
+export type HeadingClickEventFunc = (e: MouseEvent, headingClickProps: { content?: string, isSortingEnabled?: boolean }) => void;
+export type CellRender<T> = (props: T) => string;
 export type ColumnSort<T> = (props: T, sortOrder: SortOrder) => T;
+
+export interface Sortable<T> {
+    sort?: ColumnSort<T[]>;
+}
 
 export interface TableColumn<T> extends Sortable<T> {
     heading: TableHeading;
@@ -14,7 +20,7 @@ export interface TableHeading {
 }
 
 export interface TableCell {
-    content: JSX.Element | string;
+    content: string;
 }
 
 export interface Sort {
@@ -25,25 +31,31 @@ export interface Sort {
 export const defaultTheme: ThemeProps = {
 
     headingFontColor: '#4a4a4a',
-    headingBgColor: ' #f7f7f7',
-    headingFontFamily: 'News Cycle',
-    headingFontSize: '14px',
+    headingBgColor: '#f7f7f7',
+    headingFontFamily: 'Montserrat',
+    headingFontSize: '0.9em',
+    headingFontWeight: 'normal',
     headingBorder: '1px solid #e6e6e6',
     headingCursor: 'pointer',
     headingTextTransform: 'uppercase',
-    headingPadding: '15px',
+    headingPadding: '0.8em',
 
     rowSeparatorColor: '1px solid #e6e6e6',
-    rowBgColor: undefined,
-    rowAltBgColor: 'red',
+    rowBgColor: 'white',
+    rowAltBgColor: undefined,
+    rowFontFamily: 'Lato',
     rowHoverColor: '#f5f8fc',
-    rowPadding: '15px',
+    rowPadding: '0.8em',
     rowTextAlign: 'center',
     rowTransition: 'all 0.5s ease',
 
-    cellFontSize: '12px',
+    cellFontSize: '0.8em',
     cellFontColor: '#4a4a4a',
     cellBgColor: undefined,
+
+    captionBgColor: undefined,
+    captionFontColor: undefined,
+    captionPadding:  '.8em .8em'
 
 };
 
@@ -53,6 +65,7 @@ export interface ThemeProps {
     headingBgColor?: string;
     headingFontFamily?: string;
     headingFontSize?: string;
+    headingFontWeight?: string;
     headingCursor?: string;
     headingPadding?: string;
     headingTextTransform?: string;
@@ -61,6 +74,7 @@ export interface ThemeProps {
     rowSeparatorColor?: string;
     rowHoverColor?: string;
     rowBgColor?: string;
+    rowFontFamily?: string;
     rowAltBgColor?: string;
     rowTextAlign?: string;
     rowPadding?: string;
@@ -69,14 +83,15 @@ export interface ThemeProps {
     cellFontSize?: string;
     cellFontColor?: string;
     cellBgColor?: string;
+
+    captionFontColor?: string;
+    captionBgColor?: string;
+    captionPadding?: string;
 }
 
 export interface Style {
-    className?: any;
-}
-
-export interface Sortable<T> {
-    sort?: ColumnSort<T[]>;
+    className?: string;
+    style?: string;
 }
 
 export enum SortOrder {

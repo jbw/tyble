@@ -1,14 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
-
 import { shallow, configure } from 'enzyme';
-
 import * as Adapter from 'enzyme-adapter-react-16';
-
 configure({ adapter: new Adapter() });
-
 import * as renderer from 'react-test-renderer';
+import './theme.scss';
 
 import Tyble, {
     CellStyled as Cell,
@@ -19,11 +16,10 @@ import Tyble, {
     TableStyled as Table,
     ThemeProps,
     TableColumn,
-    SortOrder
+    SortOrder,
+    MouseEvent
 
 } from '../src/tyble';
-
-import './theme.scss';
 
 interface Person {
     name: string;
@@ -64,25 +60,25 @@ const data: Person[] = [
     },
 ];
 
-const sortFunc = (props: Person[], sortOrder: SortOrder) => {
+const sortFunc = (props: Person[], sortOrder: SortOrder): Person[] => {
     return props.sort((a: Person, b: Person) => {
         return sortOrder === SortOrder.DESC ? (a.name > b.name ? 1 : -1) : (a.name < b.name ? 1 : -1);
     });
 };
 
-const columns: Array<TableColumn<Person>> = [
+const columns: TableColumn<Person>[] = [
     {
         heading: { content: 'First' },
         sort: sortFunc,
-        cells: (props: Person) => <span> {props.name} </span>,
+        cells: (props: Person): string => props.name
     },
     {
         heading: { content: 'Last' },
-        cells: (props: Person) => <span> {props.lastname} </span>,
+        cells: (props: Person): string => props.lastname
     },
     {
         heading: { content: 'Company' },
-        cells: (props: Person) => <span> {props.company.name} </span>,
+        cells: (props: Person): string => props.company.name
     },
 ];
 
@@ -101,9 +97,6 @@ const theme: ThemeProps = {
 
 };
 
-const handleRowClick = (e: any) => { return; };
-const handleHeadingClick = (e: any) => { return; };
-
 describe('table', () => {
     it('should contain data passed to it ', () => {
 
@@ -116,7 +109,9 @@ describe('table', () => {
 
     it('create normal JSX', () => {
 
-        const jsxStyledComponentDefaultTheme =
+        const style: string = 'background:red';
+
+        const jsxStyledComponentDefaultTheme: JSX.Element =
             <Table>
                 <HeadingSection>
                     <Heading content='Heading 1' />
@@ -125,9 +120,7 @@ describe('table', () => {
                     <Row>
                         <Cell content='Cell 1' />
                         <Cell content='Cell 2' />
-                        <Cell
-                            content={<div style={{ background: 'red' }}>Cell 3</div>}
-                        />
+                        <Cell style={style} content='Cell 3' />
                     </Row>
                 </RowSection>
             </Table>;
@@ -136,11 +129,12 @@ describe('table', () => {
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
 
-        const rows = tree.children[2].children.length - 2; // minus empty string padding in the children array;
-        const cellStyleValue = tree.children[2].children[1].children[3].children[1].props.style.background;
+        const rowLength: number = tree.children[1].children.length;
+        const row = tree.children[1].children[0];
+        const cellStyleValue = row.children[2].props.style;
 
-        expect(cellStyleValue).toEqual('red');
-        expect(rows).toEqual(1);
+        expect(cellStyleValue).toEqual('background:red');
+        expect(rowLength).toEqual(1);
 
     });
 
@@ -155,10 +149,7 @@ describe('table', () => {
                     <RowSection>
                         <Row>
                             <Cell content='Cell 1' />
-                            <Cell content='Cell 2' />
-                            <Cell
-                                content={<div style={{ background: 'red' }}>Cell 3</div>}
-                            />
+                            <Cell>Cell 2</Cell>
                         </Row>
                     </RowSection>
                 </Table>
@@ -192,7 +183,7 @@ describe('table', () => {
         const topLevelclassName = tree.props.className;
         expect(topLevelclassName).toContain('tyble');
 
-        const headingClassName = tree.children[1].children[1].props.className;
+        const headingClassName = tree.children[0].children[0].children[0].props.className;
         expect(headingClassName).toContain('heading');
     });
 

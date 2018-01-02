@@ -1,26 +1,30 @@
 import * as React from 'react';
 
-import { MouseEvent, Style } from '../types';
+import { HeadingClickEventFunc, MouseEvent, Style } from '../types';
 
 export interface HeadingProps extends Style {
     content?: string;
-    onClick?: any;
+    onClick?: HeadingClickEventFunc;
     showDescSortingIcon?: boolean;
 }
 
-export const Heading: React.StatelessComponent<HeadingProps> = props => {
+/**
+ *
+ * @param props
+ */
+export const Heading: React.StatelessComponent<HeadingProps> = (props: HeadingProps) => {
 
     const { content, className, showDescSortingIcon, onClick } = props;
-    const classNames = ['heading', className].join(' ');
+    const classNames: string = ['heading', className].join(' ');
 
     const handleClick = (e: MouseEvent) => {
-        if (onClick) {
-            const isSortingEnabled = showDescSortingIcon !== undefined;
+        if (onClick !== undefined) {
+            const isSortingEnabled: boolean = showDescSortingIcon !== undefined;
             onClick(e, { isSortingEnabled, content });
         }
     };
 
-    return <div className={classNames} onClick={handleClick}>{content}</div>;
+    return <th scope='col' className={classNames} onClick={handleClick}>{content}</th>;
 
 };
 

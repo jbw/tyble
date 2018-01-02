@@ -11,6 +11,7 @@ Tyble
 [![Develop Status](https://travis-ci.org/jbw/tyble.svg?branch=develop)](https://travis-ci.org/jbw/tyble)
 </h2>
 
+
 ## Table of Contents
 
 - [Features](#features)
@@ -33,6 +34,8 @@ Tyble
 - Column sorting and custom sorting functionality provided
 
 ## Installation
+
+[![npm version](https://badge.fury.io/js/tyble.svg)](https://badge.fury.io/js/tyble)
 
 ###  Yarn
 
@@ -127,6 +130,7 @@ These are all of the props for `<Tyble />` component.
 | onHeadingClick | *optional* `MouseClickFunc`  | Heading click callback.                                                  |
 | onRowClick     | *optional*  `MouseClickFunc` | Row click callback.                                                      |
 | className      | *optional* `string`          | Top level className for styling.                                         |
+| caption        | *optional* `string`          | `<caption>` text                                                         |
 
 ### Theme Props
 
@@ -137,14 +141,16 @@ Here are all the props and defaults for the `ThemeProps` object. Creating your o
 | headingFontColor     | #4a4a4a           |
 | headingBgColor       | #f7f7f7           |
 | headingFontFamily    | News Cycle        |
-| headingFontSize      | 14px              |
 | headingBorder        | 1px solid #e6e6e6 |
+| headingFontSize      | 14px              |
+| headingFontWeight    | `normal`          |
 | headingCursor        | pointer           |
 | headingTextTransform | uppercase         |
 | headingPadding       | 15px              |
 | rowSeparatorColor    | 1px solid #e6e6e6 |
 | rowBgColor           | `none`            |
-| rowAltBgColor        | red               |
+| rowFontFamily        | Lato              |
+| rowAltBgColor        | `undefined`       |
 | rowHoverColor        | #f5f8fc           |
 | rowPadding           | 15px              |
 | rowTextAlign         | center            |
@@ -152,6 +158,9 @@ Here are all the props and defaults for the `ThemeProps` object. Creating your o
 | cellFontSize         | 12px              |
 | cellFontColor        | #4a4a4a           |
 | cellBgColor          | `none`            |
+| captionBgColor       | `undefined`       |
+| captionFontColor     | `undefined`       |
+| captionPadding       | .8em .8em         |
 
 ## Types
 
