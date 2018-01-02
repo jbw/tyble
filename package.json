@@ -1,6 +1,6 @@
 {
     "name": "tyble",
-    "version": "0.1.68",
+    "version": "0.2.0",
     "description": "A typesafe React table component",
     "main": "dist/tyble.js",
     "types": "dist/index.d.ts",
