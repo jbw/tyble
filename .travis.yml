@@ -17,3 +17,8 @@ cache:
   yarn: true
   directories:
     - node_modules
+
+ notifications:
+  slack:
+    rooms:
+      - superhotfire:vXdoFnSafk36YUfPZC791wZh#project-feed
