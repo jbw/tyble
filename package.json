@@ -5,19 +5,28 @@
     "main": "dist/tyble.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "./node_modules/.bin/webpack",
-        "build:prod": "./node_modules/.bin/webpack -p",
-        "start": "./node_modules/.bin/webpack-dev-server --progress --inline --hot",
-        "lint:css": "./node_modules/.bin/stylelint ./src/**/*.tsx",
-        "lint:ts": "./node_modules/.bin/tslint -p tsconfig.json -c tslint.json -t stylish",
-        "prepublishOnly": "./node_modules/.bin/webpack -p",
-        "test": "./node_modules/.bin/jest",
+        "build": "webpack",
+        "build:prod": "webpack -p",
+        "start": "webpack-dev-server --progress --inline --hot",
+        "lint:css": "stylelint ./src/**/*.tsx",
+        "lint:ts": "tslint -p tsconfig.json -c tslint.json -t stylish",
+        "prepublishOnly": "webpack -p",
+        "test": "jest && cat coverage/lcov.info | coveralls",
         "clean-install": "rm -rf node_modules/ && yarn cache clean && yarn install --pure-lockfile"
     },
     "files": [
         "dist/"
     ],
     "jest": {
+        "collectCoverage": true,
+        "coverageDirectory": "<rootDir>/coverage",
+        "coverageReporters": [
+            "json",
+            "lcov",
+            "text",
+            "html"
+        ],
+        "mapCoverage": true,
         "transform": {
             "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
@@ -31,6 +40,12 @@
             "js",
             "jsx",
             "json"
+        ],
+        "collectCoverageFrom": [
+            "src/**/*.{js,ts,tsx}",
+            "!**/*.spec.{js,ts}",
+            "!**/node_modules/**",
+            "!**/test/**"
         ]
     },
     "pre-commit": "pass",
@@ -39,14 +54,16 @@
     "license": "MIT",
     "devDependencies": {
         "@types/enzyme": "^3.1.4",
+        "@types/jest": "^22.1.1",
         "@types/react": "^16.0.25",
         "@types/react-dom": "^16.0.3",
         "awesome-typescript-loader": "^3.2.3",
+        "coveralls": "^3.0.0",
         "css-loader": "^0.28.7",
         "enzyme": "^3.2.0",
         "enzyme-adapter-react-16": "^1.1.0",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^21.2.1",
+        "jest": "^22.1.4",
         "node-sass": "^4.6.1",
         "react-axe": "^2.1.7",
         "react-test-renderer": "^16.1.0",
@@ -56,7 +73,7 @@
         "stylelint-config-standard": "^17.0.0",
         "stylelint-config-styled-components": "^0.1.1",
         "stylelint-processor-styled-components": "^1.0.0",
-        "ts-jest": "^21.1.4",
+        "ts-jest": "^22.0.3",
         "tslint": "^5.8.0",
         "tslint-microsoft-contrib": "^5.0.1",
         "tslint-react": "^3.2.0",
