@@ -11,8 +11,7 @@
         "lint:css": "stylelint ./src/**/*.tsx",
         "lint:ts": "tslint -p tsconfig.json -c tslint.json -t stylish",
         "prepublishOnly": "webpack -p",
-        "test": "jest",
-        "coverage": "nyc --reporter=html --reporter=text-lcov mocha | coveralls",
+        "test": "jest && cat coverage/lcov.info | coveralls",
         "clean-install": "rm -rf node_modules/ && yarn cache clean && yarn install --pure-lockfile"
     },
     "files": [
@@ -20,7 +19,7 @@
     ],
     "jest": {
         "collectCoverage": true,
-        "coverageDirectory": "<rootDir>/test/coverage-jest",
+        "coverageDirectory": "<rootDir>/coverage",
         "coverageReporters": [
             "json",
             "lcov",
@@ -64,7 +63,7 @@
         "enzyme": "^3.2.0",
         "enzyme-adapter-react-16": "^1.1.0",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^21.2.1",
+        "jest": "^22.1.4",
         "node-sass": "^4.6.1",
         "react-axe": "^2.1.7",
         "react-test-renderer": "^16.1.0",
@@ -74,6 +73,7 @@
         "stylelint-config-standard": "^17.0.0",
         "stylelint-config-styled-components": "^0.1.1",
         "stylelint-processor-styled-components": "^1.0.0",
+        "ts-jest": "^22.0.3",
         "tslint": "^5.8.0",
         "tslint-microsoft-contrib": "^5.0.1",
         "tslint-react": "^3.2.0",
