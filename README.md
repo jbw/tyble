@@ -7,9 +7,7 @@ Tyble
 
 `tyble` is a typesafe React table written in TypeScript.
 
-[![Master Status](https://travis-ci.org/jbw/tyble.svg?branch=master)](https://travis-ci.org/jbw/tyble)
-[![Develop Status](https://travis-ci.org/jbw/tyble.svg?branch=develop)](https://travis-ci.org/jbw/tyble)
-</h2>
+[![CircleCI](https://circleci.com/gh/jbw/tyble.svg?style=shield)](https://circleci.com/gh/jbw/tyble)[![Coverage Status](https://coveralls.io/repos/github/jbw/hypertonic/badge.svg?branch=master)](https://coveralls.io/github/jbw/hypertonic)
 
 
 ## Table of Contents
