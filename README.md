@@ -7,9 +7,7 @@ Tyble
 
 `tyble` is a typesafe React table written in TypeScript.
 
-[![Master Status](https://travis-ci.org/jbw/tyble.svg?branch=master)](https://travis-ci.org/jbw/tyble)
-[![Develop Status](https://travis-ci.org/jbw/tyble.svg?branch=develop)](https://travis-ci.org/jbw/tyble)
-</h2>
+[![CircleCI](https://circleci.com/gh/jbw/tyble.svg?style=shield)](https://circleci.com/gh/jbw/tyble)[![Coverage Status](https://coveralls.io/repos/github/jbw/hypertonic/badge.svg?branch=master)](https://coveralls.io/github/jbw/hypertonic)
 
 
 ## Table of Contents
@@ -31,7 +29,7 @@ Tyble
 - Typed property selectors for cell data
 - Customizable and controllable (React class, JSX, callbacks)
 - Themeable (styled-components, sass)
-- Column sorting and custom sorting functionality provided
+- Column sorting and custom sorting
 
 ## Installation
 
@@ -211,7 +209,9 @@ const data: Person[] = [
 ];
 ```
 
-If you want sorting you can write a custom sorting method to enable it on a column.
+### Sorting
+
+Custom sorting can be achieved by writing a custom sorting function and assigning it to the `sort` property on `TableColumn`.
 
 ```typescript
 const sortFunc = (props: Person[], sortOrder: SortOrder) => {
@@ -229,7 +229,7 @@ const sortFunc = (props: Person[], sortOrder: SortOrder) => {
 ## Columns
 
 Define your columns and use them to populate your cells. No
-accessor id needed because we have type safety!
+accessor props needed because we have type safety!
 
 ```jsx
 const columns: Array<TableColumn<Person>> = [
