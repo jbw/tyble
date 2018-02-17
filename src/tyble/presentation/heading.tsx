@@ -1,11 +1,14 @@
 import * as React from 'react';
 
 import { HeadingClickEventFunc, MouseEvent, Style } from '../types';
+import Filter from '../filter';
 
 export interface HeadingProps extends Style {
     content?: string;
     onClick?: HeadingClickEventFunc;
+    onFilterClick?: any;
     showDescSortingIcon?: boolean;
+    filter?: any;
 }
 
 /**
@@ -24,7 +27,18 @@ export const Heading: React.StatelessComponent<HeadingProps> = (props: HeadingPr
         }
     };
 
-    return <th scope='col' className={classNames} onClick={handleClick}>{content}</th>;
+    const getFilter = () => {
+        if (props.onFilterClick !== undefined && content !== undefined) {
+            return <Filter onFilter={props.onFilterClick} name={content} />;
+        }
+    }
+    return (
+        <th scope='col' className={classNames} onClick={handleClick}>
+            {content}
+            {getFilter()}
+        </th>
+    );
+
 
 };
 

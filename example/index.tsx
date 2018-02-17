@@ -69,16 +69,23 @@ const filterFunc: FilterFunc<Person> = (query: string, data: Person[]): Person[]
     const filtered = data.filter(t => t.name.indexOf(query) >= 0);
     return filtered;
 }
+const filterLastFunc: FilterFunc<Person> = (query: string, data: Person[]): Person[] => {
+
+    const filtered = data.filter(t => t.lastname.indexOf(query) >= 0);
+    return filtered;
+}
 
 const columns: TableColumn<Person>[] = [
     {
         heading: { content: 'First' },
         sortFunc: sortFunc,
         filterFunc: filterFunc,
+
         cells: (props: Person): string => props.name,
     },
     {
         heading: { content: 'Last' },
+        filterFunc: filterLastFunc,
         cells: (props: Person): string => props.lastname,
     },
     {

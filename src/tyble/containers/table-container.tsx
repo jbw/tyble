@@ -9,6 +9,8 @@ import Table from '../styled/table';
 import HeadingSection from '../styled/heading-section';
 import RowSection from '../presentation/row-section';
 
+import Filter from '../filter';
+
 import {
     MouseClickFunc,
     MouseEvent,
@@ -116,7 +118,11 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
     private getHeadings(headings: HeadingProps[]): JSX.Element[] {
         return headings.map((headingProps: HeadingProps, index: number) => {
-            return <Heading key={index} {...headingProps} />;
+            return <Heading
+                key={index}
+
+                {...headingProps}
+            />;
         });
     }
 
@@ -146,8 +152,16 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
             const headingProps: HeadingProps = {
                 ...column.heading,
-                onClick: this.handleHeadingOnClick,
+                onClick: this.handleHeadingOnClick
             };
+
+            if (column.filterFunc) {
+                headingProps.onFilterClick = this.handleFilterOnClick.bind(this);
+            }
+
+            if (column.filterFunc && this.state.filterState[column.heading.content]) {
+                dataProps = column.filterFunc(this.state.filterState[column.heading.content].filterString, dataProps);
+            }
 
             if (column.sortFunc !== undefined && column.heading.content === this.state.columnSortName) {
                 headingProps.showDescSortingIcon = this.state.columnSortOrder === SortOrder.DESC;
@@ -155,13 +169,12 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
             headingsAndRows.headings.push(headingProps);
 
-            if (column.filterFunc && this.state.filterState[column.heading.content]) {
-                dataProps = column.filterFunc(this.state.filterState[column.heading.content].filterString, dataProps);
-            }
-
             if (column.sortFunc !== undefined && this.state.columnSortName === column.heading.content) {
                 dataProps = column.sortFunc(dataProps, this.state.columnSortOrder);
             }
+        });
+
+        this.props.columns.map((column: TableColumn<T>) => {
 
             dataProps.map((cellData: T, index: number) => {
                 if (column.cells !== undefined) {
@@ -176,14 +189,22 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
                         headingsAndRows.rows.push(row);
                     }
                 }
+
             });
         });
 
         return headingsAndRows;
     }
 
-    private handleFilterOnClick(): void {
+    private handleFilterOnClick(e: any, name: string): void {
+        const headingName = name;
+        const filterString = e.target.value;
+        const filterstate = this.state.filterState;
+        filterstate[headingName] = { filterString: filterString };
 
+        this.setState({
+            filterState: filterstate
+        });
     }
 
     private handleHeadingOnClick(e: MouseEvent, headingClickProps: { content?: string, isSortingEnabled: boolean }): void {
@@ -191,15 +212,11 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
 
         if (headingClickProps.isSortingEnabled) {
             const { columnSortOrder } = this.state;
-
             const sortToggle: SortOrder = columnSortOrder === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC;
-
-            //const updatedFilter = { [headingClickProps.content]: { filterString: 'Char' } };
 
             this.setState({
                 columnSortName: headingClickProps.content,
                 columnSortOrder: sortToggle,
-                //filterState: updatedFilter
             });
 
             if (this.props.onHeadingClick !== undefined) {
