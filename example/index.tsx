@@ -19,9 +19,11 @@ import Tyble, {
     TableStyled as Table,
     ThemeProps,
     TableColumn,
-    SortOrder
+    SortOrder,
+    SortFunc,
+    FilterFunc
 
-} from 'tyble';
+} from '../src/tyble';
 
 import { Person, Skill, Company } from './types';
 
@@ -40,12 +42,17 @@ const data: Person[] = [
         skills: [{ name: 'Telepathy', level: 90 }],
         company: { name: 'X-Men' }
     },
+    {
+        name: 'Chardee',
+        lastname: 'MacDennis',
+        skills: [{ name: 'The Game of Games', level: 100 }],
+        company: { name: 'Paddy\'s' }
+    },
 
 ];
 
-type SortFunc = (props: Person[], sortOrder: SortOrder) => Person[];
 
-const sortFunc: SortFunc = (props: Person[], sortOrder: SortOrder): Person[] => {
+const sortFunc: SortFunc<Person> = (props: Person[], sortOrder: SortOrder): Person[] => {
     return props.sort((a: Person, b: Person) => {
 
         if (sortOrder) {
@@ -57,10 +64,17 @@ const sortFunc: SortFunc = (props: Person[], sortOrder: SortOrder): Person[] => 
     });
 };
 
+const filterFunc: FilterFunc<Person> = (query: string, data: Person[]): Person[] => {
+
+    const filtered = data.filter(t => t.name.indexOf(query) >= 0);
+    return filtered;
+}
+
 const columns: TableColumn<Person>[] = [
     {
         heading: { content: 'First' },
-        sort: sortFunc,
+        sortFunc: sortFunc,
+        filterFunc: filterFunc,
         cells: (props: Person): string => props.name,
     },
     {

@@ -4,12 +4,20 @@ export type MouseClickFunc = (e: MouseEvent) => void;
 export type HeadingClickEventFunc = (e: MouseEvent, headingClickProps: { content?: string, isSortingEnabled?: boolean }) => void;
 export type CellRender<T> = (props: T) => string;
 export type ColumnSort<T> = (props: T, sortOrder: SortOrder) => T;
+export type SortFunc<T> = (props: T[], sortOrder: SortOrder) => T[];
+export type FilterFunc<T> = (query: string, props: T[]) => T[];
+export type ColumnFilter<T> = (query: string, props: T) => T;
 
 export interface Sortable<T> {
-    sort?: ColumnSort<T[]>;
+    sortFunc?: ColumnSort<T[]>;
+}
+export interface Filterable<T> {
+    filterFunc?: ColumnFilter<T[]>;
+    filterString?: string
 }
 
-export interface TableColumn<T> extends Sortable<T> {
+
+export interface TableColumn<T> extends Sortable<T>, Filterable<T> {
     heading: TableHeading;
     expander?: JSX.Element;
     cells?: CellRender<T>;
@@ -55,7 +63,7 @@ export const defaultTheme: ThemeProps = {
 
     captionBgColor: undefined,
     captionFontColor: undefined,
-    captionPadding:  '.8em .8em'
+    captionPadding: '.8em .8em'
 
 };
 

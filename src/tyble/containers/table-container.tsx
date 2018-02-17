@@ -17,7 +17,7 @@ import {
     defaultTheme,
     TableColumn,
     Sort,
-    TableCell
+    TableCell,
 } from '../types';
 
 interface OrderedRowProps {
@@ -39,12 +39,15 @@ export interface TableProps<T> {
     onHeadingClick?: MouseClickFunc;
     onRowClick?: MouseClickFunc;
     className?: string;
+    filterable?: boolean;
 }
 
 export interface TableState {
     columnSortName: string | undefined;
     columnSortOrder: SortOrder;
+    filterState: any;
 }
+
 
 /**
  * Main table container component.
@@ -79,14 +82,16 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         this.state = {
             columnSortName: column,
             columnSortOrder: sortOrder,
+            filterState: {}
         };
+
     }
 
     public render(): JSX.Element {
 
         const theme: ThemeProps = { ...defaultTheme, ...this.props.theme };
 
-        const { headings, rows } = this.mapColumnsToRows();
+        const { headings, rows } = this.mapColumnsToRows(this.props.data);
 
         const tyble: JSX.Element =
             <Table className={this.props.className} caption={this.props.caption}>
@@ -130,7 +135,8 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         });
     }
 
-    private mapColumnsToRows(): HeadingsAndRows {
+    private mapColumnsToRows(data: T[]): HeadingsAndRows {
+        let dataProps: T[] = data;
 
         const headings: HeadingProps[] = [];
         const rows: OrderedRowProps[] = [];
@@ -143,16 +149,18 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
                 onClick: this.handleHeadingOnClick,
             };
 
-            if (column.sort !== undefined && column.heading.content === this.state.columnSortName) {
+            if (column.sortFunc !== undefined && column.heading.content === this.state.columnSortName) {
                 headingProps.showDescSortingIcon = this.state.columnSortOrder === SortOrder.DESC;
             }
 
             headingsAndRows.headings.push(headingProps);
 
-            let dataProps: T[] = this.props.data;
+            if (column.filterFunc && this.state.filterState[column.heading.content]) {
+                dataProps = column.filterFunc(this.state.filterState[column.heading.content].filterString, dataProps);
+            }
 
-            if (column.sort !== undefined && this.state.columnSortName === column.heading.content) {
-                dataProps = column.sort(this.props.data, this.state.columnSortOrder);
+            if (column.sortFunc !== undefined && this.state.columnSortName === column.heading.content) {
+                dataProps = column.sortFunc(dataProps, this.state.columnSortOrder);
             }
 
             dataProps.map((cellData: T, index: number) => {
@@ -174,16 +182,24 @@ export default class TableContainer<T> extends React.Component<TableProps<T>, Ta
         return headingsAndRows;
     }
 
+    private handleFilterOnClick(): void {
+
+    }
+
     private handleHeadingOnClick(e: MouseEvent, headingClickProps: { content?: string, isSortingEnabled: boolean }): void {
+
 
         if (headingClickProps.isSortingEnabled) {
             const { columnSortOrder } = this.state;
 
             const sortToggle: SortOrder = columnSortOrder === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC;
 
+            //const updatedFilter = { [headingClickProps.content]: { filterString: 'Char' } };
+
             this.setState({
                 columnSortName: headingClickProps.content,
                 columnSortOrder: sortToggle,
+                //filterState: updatedFilter
             });
 
             if (this.props.onHeadingClick !== undefined) {
