@@ -13,9 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "react-dom": "^16.1.2",
     "styled-components": "^2.2.3",
-    "tyble": "^0.1.6"
+    "tyble": "^0.1.9"
   },
   "devDependencies": {
     "@types/node": "^8.0.34",
